@@ -2,18 +2,26 @@ project:
   type: website
   output-dir : docs  
 website:
-  title: "Edu1"
+  title: "edu1"
+  page-navigation: true
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+    right:
+      - icon : github
+        href : https://github.com/gangcheol/
+  sidebar:
+    style: "docked"
+    search: True
+    contents: auto
+    
 format:
   html:
-    theme: cosmo
     css: styles.css
     toc: true
+    code-fold : False
+    code-line-numbers : True
+    code-copy : True
 
-
-
+theme :
+  light : flatly
+  
+editor : visual
