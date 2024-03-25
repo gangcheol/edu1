@@ -1,0 +1,12 @@
+---
+title: "edu1"
+listing:
+  contents: posts
+  sort: [date desc, title]
+  type: table
+  categories: false
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+---
