@@ -4,7 +4,7 @@
     "href": "posts/2024-03-26-01. jupyter 단축키 추가법.html",
     "title": "01. jupyter lab 단축키 추가",
     "section": "",
-    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpt %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2)",
+    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
     "crumbs": [
       "Posts",
       "01. jupyter lab 단축키 추가"
