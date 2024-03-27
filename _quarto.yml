@@ -1,9 +1,13 @@
 project:
   type: website
-  output-dir : docs
+  output-dir : docs  
 website:
-  title: "edu1"
+  title: "Gangcheol"
   page-navigation: true
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/gangcheol/
   sidebar:
     style: "docked"
     search: True
@@ -17,5 +21,5 @@ format:
     code-line-numbers : True
     code-copy : True
 
-  
+theme : minty
 editor : visual
