@@ -1,5 +1,99 @@
 [
   {
+    "objectID": "posts/2024-04-03-stat & ml basic.html",
+    "href": "posts/2024-04-03-stat & ml basic.html",
+    "title": "02. stat & ML basic",
+    "section": "",
+    "text": "1 모집단(Population) : 연구 또는 관측 대상이 되는 전체\n\nex : 우리나라 30세이상 월 평균 소득 조사, 사실 이를 위해 해당 집단을 전수 조사하는 것은 거의 불가능에 가까움\n\n2 표본 : 모집단의 일부, 연구 또는 관측을 위해 일정 시점 또는 일정 집단에서 수집한 대상(데이터)\n\nex : 2020년 1월 1일시점에 조사한 30세 이상 국내 성인 남자 10명의 월평균 소득\n\n3 표본평균과 중앙값 구하기\n\n평균\n\n\nincome &lt;- c(100, 200, 300, 400, 500, 600, 700, 800, 1000 ,1000)\n\nsum(income)/length(income)\n\n560\n\n\n\n중앙값\n\n\n#sort(income);length(income)\n\nprint(paste(\"손계산 :\",(sort(income)[5]+sort(income)[6])/2))\n\nprint(paste(\"함수 사용 :\",median(income)))\n\n[1] \"손계산 : 550\"\n[1] \"함수 사용 : 550\"",
+    "crumbs": [
+      "Posts",
+      "02. stat & ML basic"
+    ]
+  },
+  {
+    "objectID": "posts/2024-04-03-stat & ml basic.html#모집단과-표본",
+    "href": "posts/2024-04-03-stat & ml basic.html#모집단과-표본",
+    "title": "02. stat & ML basic",
+    "section": "",
+    "text": "1 모집단(Population) : 연구 또는 관측 대상이 되는 전체\n\nex : 우리나라 30세이상 월 평균 소득 조사, 사실 이를 위해 해당 집단을 전수 조사하는 것은 거의 불가능에 가까움\n\n2 표본 : 모집단의 일부, 연구 또는 관측을 위해 일정 시점 또는 일정 집단에서 수집한 대상(데이터)\n\nex : 2020년 1월 1일시점에 조사한 30세 이상 국내 성인 남자 10명의 월평균 소득\n\n3 표본평균과 중앙값 구하기\n\n평균\n\n\nincome &lt;- c(100, 200, 300, 400, 500, 600, 700, 800, 1000 ,1000)\n\nsum(income)/length(income)\n\n560\n\n\n\n중앙값\n\n\n#sort(income);length(income)\n\nprint(paste(\"손계산 :\",(sort(income)[5]+sort(income)[6])/2))\n\nprint(paste(\"함수 사용 :\",median(income)))\n\n[1] \"손계산 : 550\"\n[1] \"함수 사용 : 550\"",
+    "crumbs": [
+      "Posts",
+      "02. stat & ML basic"
+    ]
+  },
+  {
+    "objectID": "posts/2024-04-03-stat & ml basic.html#평균과-분산",
+    "href": "posts/2024-04-03-stat & ml basic.html#평균과-분산",
+    "title": "02. stat & ML basic",
+    "section": "평균과 분산",
+    "text": "평균과 분산\n- 모집단의 분포(형태는) 일반적으로 수집한 표본의 모수인 평균과 분산에 의해 결정된다.\n\n평균(기댓값)\n1 이산형일 경우 : 베르누이, 이항, 포아송 분포 등등…\n\nex1 : 동전 던지기를 해서 앞면이 나올 평균확률은?\n\n\n\n\n\\(x\\)\n0\n1\n\n\n\n\n\\(f(x)\\)\n1/2\n1/2\n\n\n\n\\[E(X) = \\sum_{i=1}^{n} x_i f(x_i)\\]\n2 연속형일 경우 : 베타, 지수, 감마, 정규 등등…\n\nex2, 표준정규분포의 평균은?\n\n\\[X \\sim N(0, 1)\\]\n\\[f(x) = \\frac{1}{\\sqrt {2\\pi}} e^{- \\frac {x^2}{2}}\\]\n\n\n숙제 1. 아래의 공식을 이용하여 표준정규분포의 평균이 실제로 1이 나오는지 확인!\n\\[E(X) = \\int xf(x) \\,\\,dx\\]\n\n\n대수의 법칙\n- Law of large numbers\n- 샘플사이즈가 클수록 표본평균은 모집단의 평균으로 수렴한다는 법칙! (체비셰프 부등식을 이용하여 증명 가능!)\n\\[\\begin {align} P(|\\overline X - \\mu| &lt; \\varepsilon)  &=  P(|\\overline X - \\mu| &lt; \\varepsilon^2) \\\\ \\\\\n                                                       &= 1 -  \\frac{E(\\overline X_{n} - \\mu)^2}{\\varepsilon^2} \\\\ \\\\\n                                                       &= 1 - \\frac{\\sigma^2/n}{\\varepsilon^2} \\approx 1 \\end {align} \\]\n- R을 이용한 증명\n\n\n\n\\(x\\)\n100\n200\n\n\n\n\n\\(f(x)\\)\n1/2\n1/2\n\n\n\n\n이므로 모집단의 기대값은 $E(X) = xf(x) = 100 /2 + 200 /2 = 150 $\n\n\n### code_fold : true\n#install.packages(\"plotly\")\nlibrary(tidyverse)\nlibrary(plotly)\n\n\nx &lt;- tibble(income = c(100, 200))\n\ndata &lt;- tibble()\nfor (i in 1:500) \n    {\n        sample &lt;- x %&gt;% sample_n(i, replace = T, weight = c(1/2,1/2))\n        sample &lt;- sample %&gt;% mutate(sample_size = i)\n        data &lt;- bind_rows(data, sample)\n    }\n\n\n### code_fold : true\nsample_mean &lt;- data %&gt;% group_by(sample_size) %&gt;% \n                        summarize(sample_mean = mean(income))\n\nfig &lt;- plot_ly(data = sample_mean, \n               x = ~sample_size, y = ~sample_mean, mode = \"lines\", \n                type = \"scatter\", name = \"표본평균\", opacity = 0.5) %&gt;% \n                        add_trace(y = 150, name = \"모집단 평균\")\n\nfig %&gt;% \n    layout(title = \"Law of large numbers\") \n\n\n\n    \n        \n        \n\n\n\n\n\n\n\n\n    \n    \n        \n\n    \n\n\n\n\n\n분산\n- 수집한 표본들이 평균으로부터 떨어져 있는 정도를 측정\n1 이산형일 경우\n\nex1 : 동전 던지기를 해서 앞면이 나오는 실험의 분산은?\n\n\n\n\n\\(x\\)\n0\n1\n\n\n\n\n\\(f(x)\\)\n1/2\n1/2\n\n\n\n\\[\\sum_{i=0}^{n} = [x_i-E(X)]^2f(x_i)\\]\n2 연속형일 경우\n\\[Var(X) = \\int [x-E(x)]^2f(x) \\,\\,dx\\]",
+    "crumbs": [
+      "Posts",
+      "02. stat & ML basic"
+    ]
+  },
+  {
+    "objectID": "posts/2024-04-03-stat & ml basic.html#정규분포",
+    "href": "posts/2024-04-03-stat & ml basic.html#정규분포",
+    "title": "02. stat & ML basic",
+    "section": "정규분포",
+    "text": "정규분포\n1 분포 정의 \\(\\to X \\sim N(\\mu, \\sigma^2)\\)\n\\[ f(x) = \\frac{1}{\\sqrt(2\\pi\\sigma^2)}\\exp\\left( -\\frac12 \\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right)\\]\n2 대게 종모양의 분포를 띔\n3 표준편차가 작을수록 곡선이 좀더 뾰족해지고 폭이 좁아진다? \\(\\to\\) 분산에 정의를 다시 한번 생각해보시면됩니다.\n\noptions(repr.plot.res=200, repr.plot.width = 8, repr.plot.height = 6)\nx1 &lt;- rnorm(10000, 0, 1)\nx2 &lt;- rnorm(10000, 0, 10)\nx3 &lt;- rnorm(10000, 0, 20)\nx4 &lt;- rnorm(10000, 0, 30)\n\npar(mfrow = c(2,2))\nhist(x1, main = \"평균 : 0, 표준편차 : 1\", breaks = 50, xlim = c(-100,100))\nhist(x2, main = \"평균 : 0, 표준편차 : 10\", breaks = 50, xlim = c(-100,100))\nhist(x3, main = \"평균 : 0, 표준편차 : 20\", breaks = 50, xlim = c(-100,100))\nhist(x4, main = \"평균 : 0, 표준편차 : 30\", breaks = 50, xlim = c(-100,100))\n\n\n\n\n\n\n\n\n4 정규분포의 기각영역\n\n우리가 수집한 어떤 집단의 평균이 0일 때의 가설검정\n\n\\[H_0 : \\mu = 0, \\quad H_1 : \\mu \\neq 0\\]\n\nx = rnorm(1000)\nnormal &lt;- tibble(x = x, fx = fx)\n\nnormal &lt;- normal %&gt;% mutate(p = ifelse(abs(x) &gt;= 2.58, \"유의수준 1%\", \n                             ifelse(abs(x) &gt;= 1.96, \"유의수준 5%\", \n                                    ifelse(abs(x) &gt;= 1.65, \"유의수준 10%\", \"기각 x\"))))\n\n\noptions(repr.plot.res = 200, repr.plot.width = 8, repr.plot.height = 4)\nnormal %&gt;% ggplot(`aes(x = x, fill = p)) +\n            geom_histogram(bins = 100)\n\n\n\n\n\n\n\n\n5 중심극한정리\n\n표본의 크기가 커지면, 표본평균의 분포는 정규분포로 수렴 \\(n \\to \\infty,\\, \\overline X_n \\sim N(\\mu, \\sigma^2)\\)\n이것을 가정하고 있기 때문에, 우리는 어떠한 가설설정 시 정규분포를 이용해서 통계적 유의성을 말할 수 있는거임\n\n\nexample1, 동전던지기를 통한 중심극한정리 실험\n\n\nstep1. 동전던지기 실험, 동전던지기 100회 \\(\\text{sample size} = 100\\)\n\n\nrbinom(100, 1, 0.5)\n\n\n0110110111111110011101100000100100011100101111101000000110111100000101000011100001011111010111000000\n\n\n\nstep2. 표본평균 구하기\n\n\nx_mean = mean(rbinom(100, 1, 0.5))\nx_mean\n\n0.6\n\n\n\nstep3. 표본평균의 분포 구하기\n\n\nsample_mean = c()\n\nfor (i in 1:1000) {\n    x_mean = mean(rbinom(1000, 1, 0.5))\n    sample_mean = append(sample_mean,x_mean)\n    }\n\n\nhist(sample_mean,main = \"n=1000\", breaks = 50)",
+    "crumbs": [
+      "Posts",
+      "02. stat & ML basic"
+    ]
+  },
+  {
+    "objectID": "posts/2024-04-03-stat & ml basic.html#ml-basic",
+    "href": "posts/2024-04-03-stat & ml basic.html#ml-basic",
+    "title": "02. stat & ML basic",
+    "section": "ML basic",
+    "text": "ML basic\n\n1. 선형회귀 평가지표\n- 결정계수 \\(R^2\\) : 우리가 적합시킨 모델이 얼마만큼의 설명력을 가지고 있는가\n\n지난시간 학습한 자료 꼭 한번 확인!\n\n\\[R^2 = \\frac{SSR}{SST} = \\frac{1-SSE}{SST}\\]\n\n\n2. Overfitting\n\n우리가 학습시킨 모델이, 훈련데이터에만 집중적으로 학습이되어서, 실제 검증용 데이터로 평가를 했을 때 모델 성능이 낮아지는 경우\n이거를 표현해보면…\n\n\\[\\begin {align} \\text {MSE} = E[(\\hat y - y)^2] &= Var(\\hat y) + \\text {bias}^2   \\\\\n                                                                &= E[(\\hat y - E(\\hat y ))^2] + E[(E(\\hat y) - y)^2] + Var(\\varepsilon) \\end {align}\\]\n- \\(Var(\\hat y) \\, \\to \\,\\) 훈련자료의 변화에 \\(\\hat y\\)가 얼마나 민감하게 반응하는가?(즉, 설명력을 의미한다.)\n- \\(\\text {bias}^2\\) : 실제자료를 모형으로 얼마나 가깝게 근사할 수 있는가? (만약, \\(E(\\hat y) = y\\) 일 경우 해당 추정량은 불편추정량이다.)\n\n\\(Var(\\hat y),\\,\\text {bias}^2\\) 는 reducible error로 어떤 모델을 선택하느냐에 따라 줄일 수 있는 오차이다.\n\n- \\(Var(\\varepsilon)\\) : 어떤 모델을 사용하건 줄일 수 없는 오차\n- Flexibility : 모델 복잡도 측도\n\nFlexibility가 높아지면 \\(Var(\\hat y)\\) 는 높아지고, \\(\\text {bias}\\)는 낮아진다. (trade-off)\n이를 바꿔말하면 더 유연한(복잡한) 모형은 더 큰 분산을 가지고 더 단순한 모형일수록 큰 편의를 가진다.\n훈련 데이터로 모델 적합시, bias를 낮추기 위해 Var를 높여 모델 복잡도를 지나치게 높이는 것은 좋은 선택이 아니다.\n아래의 예시는 모형의 복잡도가 너무 높으면 평가 데이터에 대한 MSE가 오히려 과대추정되는 “과적합 문제” 를 보여주고 있다.\n\n\n\n\n\nex1\n\n\n\n- 실제로 위의 원데이터는 일반적인 선형모형으로 적합해도 괜찮을 것 같다.\n- 왼쪽그림에서 지나치게 복잡하게 적합된 초록색 선을 살펴보자.\n\n훈련 MSE(회색선) 는 3개의 모델 중 가장 낮으나, 과적합 이슈로 평가 MSE(빨간색선) 가 과대추정된 것을 볼 수 있다.\n\n\n\nex2\n\n\n\n- 위 데이터는 ex1과 달리 일반적인 선형회귀모형으로 적합하면 안될것 같은 느낌이 든다.\n- 파란색선은 중간 정도로 적합된 복잡한 모형이고, 초록색선은 지나치게 적합된 모형이다.\n\n오른쪽 그림을 살펴보면 파란색선으로 적합된 모형의 Test MSE가 가장 낮음을 볼 수 있다.\n\n\n\n과적합 방지 1. 변수선택법\n- 변수선택법 : AIC, BIC, Mallows’ C_p 등등\n\n\n과적합 방지 2. Regularized Linear Regression\n- 정규화 선형회귀는 선형회귀 계수에 대한 제약 조건을 추가하여 모델이 과도하게 최적화되는 현상을 막는 방법!\n1 Ridge\n\n기존 OLS를 이용한 \\(\\beta_i\\) 추정할 떄 사용하는 정규방정식\n\n\\[RSS = \\sum_{i=1}^n(y_i - \\beta_0 -\\sum_{j=1}^p\\beta_jx_{ij})^2\\]\n\nRidge 추정량은 위와 매우 유사하나 shrinkage penalty를 추가로 고려하여 최소화한다.\n\n\\[\\sum_{i=1}^n(y_i - \\beta_0 -\\sum_{j=1}^p\\beta_jx_{ij})^2 + \\lambda \\sum_{i=1}^p \\beta_j^2\\]\n\\[\\lambda \\,:\\,tuning \\,\\,parameter\\]\n\n\\(\\lambda\\)가 0이되면 일반적인 선형회귀모형이되고, \\(\\lambda\\)가 커지면 정규화 정도가 커진다.(회귀계수들이 작아진다.) \\(\\to\\) bias는 증가 variance는 감소\n릿지회귀모형에서는 L2 penalty 를 사용하여 베타계수들이 0에 근사하도록 한다.\n\n2 Lasso\n\n라쏘는 릿지와 다르게 베타계수를 “0값으로 보낸다.”\n이것을 “L1 penalty” 라고 부른다.m\n\n\\[\\sum_{i=1}^n(y_i - \\beta_0 -\\sum_{j=1}^p\\beta_jx_{ij})^2 + \\lambda \\sum_{i=1}^p |\\beta_j|\\]\n\n\n실습\n\n#install.packages(\"mosaicData\")\n\n\nlibrary(tidyverse)\nlibrary(mosaicData)\nlibrary(glmnet) ## 리지 및 라쏘 회귀를 적합하기 위한 패키지\n\n1 데이터확인\n\nglimpse(RailTrail)\n\nRows: 90\nColumns: 11\n$ hightemp   &lt;int&gt; 83, 73, 74, 95, 44, 69, 66, 66, 80, 79, 78, 65, 41, 59, 50,~\n$ lowtemp    &lt;int&gt; 50, 49, 52, 61, 52, 54, 39, 38, 55, 45, 55, 48, 49, 35, 35,~\n$ avgtemp    &lt;dbl&gt; 66.5, 61.0, 63.0, 78.0, 48.0, 61.5, 52.5, 52.0, 67.5, 62.0,~\n$ spring     &lt;int&gt; 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0,~\n$ summer     &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,~\n$ fall       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1,~\n$ cloudcover &lt;dbl&gt; 7.6, 6.3, 7.5, 2.6, 10.0, 6.6, 2.4, 0.0, 3.8, 4.1, 8.5, 7.2~\n$ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.00, 0.00,~\n$ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 432, 418,~\n$ weekday    &lt;lgl&gt; TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, TR~\n$ dayType    &lt;chr&gt; \"weekday\", \"weekday\", \"weekday\", \"weekend\", \"weekday\", \"wee~\n\n\n- model.matrix는 기본적으로 절편을 포함한 모형을 산정한다. 절편을 제외시킨 모형을 고려해보자\n\nx &lt;- model.matrix(volume~.-1 ,RailTrail) \ny &lt;- RailTrail$volume\n\n- 모형적합\n\nridge.fit &lt;- cv.glmnet(x,y,alpha=0) ## 모형적합 alpha=0 은 릿지를 말함\n\n\nbestlam &lt;- ridge.fit$lambda.min\nlog(bestlam)\n\n3.02271971457234\n\n\n- 각 변수들의 beta 계수구하기\n\ncoef(ridge.fit, s = \"lambda.min\")\n\n12 x 1 sparse Matrix of class \"dgCMatrix\"\n                        s1\n(Intercept)    111.4030636\nhightemp         3.6351375\nlowtemp         -0.9192012\navgtemp          1.9016337\nspring           9.6677301\nsummer           4.4014186\nfall           -27.7525473\ncloudcover      -8.1350693\nprecip         -88.4982099\nweekdayFALSE    13.8267092\nweekdayTRUE    -13.8900786\ndayTypeweekend  13.9990402\n\n\n- MSE가 최소가 되는 지점을 확인\n\noptions(repr.plot.res=200,repr.plot.height=4,repr.plot.width=10)\n\nplot(ridge.fit)\nabline(v=log(bestlam),lty=\"dashed\",lwd=2,col=\"blue\")\n\n\n\n\n\n\n\n\n- 산출된 best.lam값으로 모형을 다시 적합후 test_MSE를 구해보자\n\ntrain  &lt;- sample(1:nrow(x),nrow(x)*0.7)\ntest  &lt;- -train\ny.test &lt;- y[test]\ny.train &lt;- y[train]\n\n\nridge.fit &lt;- glmnet(x[train,], y.train, alpha=0, lambda=bestlam, family=\"gaussian\")\n\nridge.pred &lt;- predict(ridge.fit,s=bestlam,newx=x[test,]) \n\nridge.coef &lt;- predict(ridge.fit,s=bestlam,newx=x[test,],type=\"coefficients\") ## type=\"coefficients\"로 하면 예측된 베타계수를 보여줌\n\n- 여기선 MSE가 거의 1만에 가깝게 나왔는데 이는 지나치게 모형을 단순화한 것임 즉, best_lam값을 다시 찾는 과정을 반복해야한다….\n\nmean((ridge.pred - y.test)^2)\n\n8763.80834274373",
+    "crumbs": [
+      "Posts",
+      "02. stat & ML basic"
+    ]
+  },
+  {
+    "objectID": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
+    "href": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
+    "title": "00. jupyter lab 단축키 추가",
+    "section": "",
+    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "crumbs": [
+      "Posts",
+      "00. jupyter lab 단축키 추가"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "edu1",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 23, 2024\n\n\n02. stat & ML basic\n\n\nGC \n\n\n\n\nMar 28, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\nMar 26, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nAug 19, 2023\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "posts/2023-08-19-00. Plotly test.html",
+    "href": "posts/2023-08-19-00. Plotly test.html",
+    "title": "00. Plotly test",
+    "section": "",
+    "text": "import\n\nimport plotly.express as ex\nimport plotly.express as px\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook_connected\"\nimport numpy as np\nimport pandas as pd\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/kalilurrahman/datasets/main/mobilephonemktshare2020.csv')\ndf.head()\n\n\n\n\n\n\n\n\n\nDate\nSamsung\nApple\nHuawei\nXiaomi\nOppo\nMobicel\nMotorola\nLG\nOthers\nRealme\nGoogle\nNokia\nLenovo\nOnePlus\nSony\nAsus\n\n\n\n\n0\n2019-10\n31.49\n22.09\n10.02\n7.79\n4.10\n3.15\n2.41\n2.40\n9.51\n0.54\n2.35\n0.95\n0.96\n0.70\n0.84\n0.74\n\n\n1\n2019-11\n31.36\n22.90\n10.18\n8.16\n4.42\n3.41\n2.40\n2.40\n9.10\n0.78\n0.66\n0.97\n0.97\n0.73\n0.83\n0.75\n\n\n2\n2019-12\n31.37\n24.79\n9.95\n7.73\n4.23\n3.19\n2.50\n2.54\n8.13\n0.84\n0.75\n0.90\n0.87\n0.74\n0.77\n0.70\n\n\n3\n2020-01\n31.29\n24.76\n10.61\n8.10\n4.25\n3.02\n2.42\n2.40\n7.55\n0.88\n0.69\n0.88\n0.86\n0.79\n0.80\n0.69\n\n\n4\n2020-02\n30.91\n25.89\n10.98\n7.80\n4.31\n2.89\n2.36\n2.34\n7.06\n0.89\n0.70\n0.81\n0.77\n0.78\n0.80\n0.69\n\n\n\n\n\n\n\n\n\ndf.set_index(\"Date\").diff().\\\n  dropna().boxplot(backend = \"plotly\")",
+    "crumbs": [
+      "Posts",
+      "00. Plotly test"
+    ]
+  },
+  {
     "objectID": "posts/2024-03-28-01. intro.html",
     "href": "posts/2024-03-28-01. intro.html",
     "title": "01. intro",
@@ -30,45 +124,6 @@
     "crumbs": [
       "Posts",
       "01. intro"
-    ]
-  },
-  {
-    "objectID": "posts/2023-08-19-00. Plotly test.html",
-    "href": "posts/2023-08-19-00. Plotly test.html",
-    "title": "00. Plotly test",
-    "section": "",
-    "text": "import\n\nimport plotly.express as ex\nimport plotly.express as px\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook_connected\"\nimport numpy as np\nimport pandas as pd\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/kalilurrahman/datasets/main/mobilephonemktshare2020.csv')\ndf.head()\n\n\n\n\n\n\n\n\n\nDate\nSamsung\nApple\nHuawei\nXiaomi\nOppo\nMobicel\nMotorola\nLG\nOthers\nRealme\nGoogle\nNokia\nLenovo\nOnePlus\nSony\nAsus\n\n\n\n\n0\n2019-10\n31.49\n22.09\n10.02\n7.79\n4.10\n3.15\n2.41\n2.40\n9.51\n0.54\n2.35\n0.95\n0.96\n0.70\n0.84\n0.74\n\n\n1\n2019-11\n31.36\n22.90\n10.18\n8.16\n4.42\n3.41\n2.40\n2.40\n9.10\n0.78\n0.66\n0.97\n0.97\n0.73\n0.83\n0.75\n\n\n2\n2019-12\n31.37\n24.79\n9.95\n7.73\n4.23\n3.19\n2.50\n2.54\n8.13\n0.84\n0.75\n0.90\n0.87\n0.74\n0.77\n0.70\n\n\n3\n2020-01\n31.29\n24.76\n10.61\n8.10\n4.25\n3.02\n2.42\n2.40\n7.55\n0.88\n0.69\n0.88\n0.86\n0.79\n0.80\n0.69\n\n\n4\n2020-02\n30.91\n25.89\n10.98\n7.80\n4.31\n2.89\n2.36\n2.34\n7.06\n0.89\n0.70\n0.81\n0.77\n0.78\n0.80\n0.69\n\n\n\n\n\n\n\n\n\ndf.set_index(\"Date\").diff().\\\n  dropna().boxplot(backend = \"plotly\")",
-    "crumbs": [
-      "Posts",
-      "00. Plotly test"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "edu1",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMar 28, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\nMar 26, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nAug 19, 2023\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
-    "href": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
-    "title": "00. jupyter lab 단축키 추가",
-    "section": "",
-    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
-    "crumbs": [
-      "Posts",
-      "00. jupyter lab 단축키 추가"
     ]
   }
 ]
