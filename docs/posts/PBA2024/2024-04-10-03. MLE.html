@@ -319,6 +319,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#단순선형회귀분석" id="toc-단순선형회귀분석" class="nav-link" data-scroll-target="#단순선형회귀분석">단순선형회귀분석</a></li>
   <li><a href="#로지스틱" id="toc-로지스틱" class="nav-link" data-scroll-target="#로지스틱">로지스틱</a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">confusion matrix</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">summary</a></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">to do</a></li>
@@ -352,33 +353,36 @@ window.Quarto = {
 </ul>
 <p><code>-</code> 해석 2 (조금 더.. 전문적인 지식이 들어간 해석)</p>
 <ul>
-<li><p>주어진 모수 (<span class="math inline">\(p, \theta, \mu, \sigma...\)</span>)가 주어졌을 때 <span class="math inline">\(\bf {x}\)</span>를 관측할 <code>확률</code>(or 확률밀도)를 나타낸다.(<span class="math inline">\(\star\star\star\)</span>)</p></li>
+<li><p>모수 (<span class="math inline">\(p, \theta, \mu, \sigma...\)</span>)가 주어졌을 때 <span class="math inline">\(\bf {x}\)</span>를 관측할 <code>확률</code>을 나타낸다.(<span class="math inline">\(\star\star\star\)</span>)</p></li>
 <li><p>즉, 특정 모수가 주어졌을 때 어떤 <code>샘플들이 얻어질 확률</code>이지 <strong>모수(확률, 평균)가 어떤 상수 값 (<code>ex</code> <span class="math inline">\(p = 0.2\)</span>)과 일치할 확률을 의미하지 않는다.</strong>(<span class="math inline">\(\star\star\star\)</span>)</p></li>
 </ul>
 <p><code>-</code> 해석 2에 대한 좀더 직관적인 접근으로 아래와 같은 실험에서 우도함수를 최대화하는 <span class="math inline">\(\hat{p}_{mle}\)</span> 구해보자.</p>
 <blockquote class="blockquote">
 <p>동전 던지기 실험 <span class="math inline">\(\to X_i \overset{iid}\sim Ber(p), \quad f(x) = p^{x}(1-p)^{1-x}, \quad  x \in [0,1]\)</span></p>
 </blockquote>
-<p><code>-</code> 일반적으로 우리가 알고 있는 사실 <span class="math inline">\(\to p = 1/2, \,\, f(x) = 1/2\)</span></p>
-<div id="53d594af-4575-428b-86de-71804795afa2" class="cell" data-execution_count="6">
+<div id="f6ba57b8-7726-472b-9869-9effa9c6aebb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>]</span>
 <span id="cb2-2"><a href="#cb2-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>[0, 1, 0, 1]</code></pre>
 </div>
 </div>
 <p><code>-</code> 우도함수 계산</p>
-<div id="ad6b5564-a647-44cf-8671-4d5e785ed533" class="cell" data-execution_count="9">
+<p><span class="math inline">\(f(x = 0) = p^{x}(1-p)^{1-x} = \frac 12\)</span></p>
+<p><span class="math inline">\(f(x = 1) = p^{x}(1-p)^{1-x} = \frac 12\)</span></p>
+<div id="68b70d9b-b60a-4500-bf1a-f1d7303dd8c0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>0.0625</code></pre>
 </div>
 </div>
+<p><code>-</code> 일반적으로 우리가 알고 있는 사실 <span class="math inline">\(\to p = 1/2, \,\, f(x) = 1/2\)</span></p>
+<p><code>-</code> 우도함수 계산</p>
 <p><code>-</code> 만약 <span class="math inline">\(p = 1/3\)</span>이라면? <span class="math inline">\(\to f(x) = (1/3)^{x}(2/3)^{1-x}\)</span></p>
 <p><code>-</code> 우도함수 계산</p>
-<div id="d5621377-33d1-413d-b5ac-cca8df30bd57" class="cell" data-execution_count="11">
+<div id="c46650ef-18f5-4783-bdd2-e40ac62e6809" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>(<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0.04938271604938271</code></pre>
 </div>
 </div>
@@ -405,7 +409,7 @@ window.Quarto = {
 <p><code>-</code> 중학교 수학 : 로그함수는 일반적으로 증가함수이며, 증가함수는 미분하여 0이되는 지점에서 최대값을 갖는다.</p>
 <p><code>-</code> 다시 예제</p>
 <blockquote class="blockquote">
-<p>동전 던저기 실험 <span class="math inline">\(\to X_i \overset{iid}\sim Ber(p), \quad f(x) = p^{x}(1-p)^{1-x}, \quad  x \in [0,1]\)</span></p>
+<p>동전 던지기 실험 <span class="math inline">\(\to X_i \overset{iid}\sim Ber(p), \quad f(x) = p^{x}(1-p)^{1-x}, \quad  x \in [0,1]\)</span></p>
 </blockquote>
 <ul>
 <li><p>일반적으로 알려진 사실 <span class="math inline">\(p = 1/2\)</span></p></li>
@@ -415,15 +419,16 @@ window.Quarto = {
 <p><span class="math display">\[\begin{align*} \frac{d}{d\,p} l(p) &amp;= \frac{\sum x}{p} - \frac{n-\sum x}{1-p} \\ \\
                     &amp;= (1-p)\sum x - p(n-\sum x)  \\ \\
                     &amp;= \sum x  - pn = 0\end{align*}\]</span></p>
-<p><span class="math display">\[\divideontimes \,\,\hat {p}_{mle} = \frac {\sum x}{ n} \]</span></p>
+<p><span class="math display">\[\divideontimes \,\,\hat {p}_{mle} = \frac {\sum x}{ n} = \bar x \]</span></p>
 <ul>
-<li>확인</li>
+<li><p>모수 <span class="math inline">\(\hat p_{mle}\)</span>는 표본평균 <span class="math inline">\(\bar x\)</span>로 수렴한다.</p></li>
+<li><p>확인</p></li>
 </ul>
-<div id="14d5e7a9-9d6b-4bbe-ad3e-398afe909bee" class="cell" data-execution_count="26">
+<div id="43527f5d-aa53-4fea-bfba-2dbb6c2ace63" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>x <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>]</span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="bu">sum</span>(x)<span class="op">/</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0.5</code></pre>
 </div>
 </div>
@@ -459,8 +464,9 @@ window.Quarto = {
 </ul>
 <p><span class="math display">\[\sum ({y_i - \beta_0 -\beta_1x})^2 = 0\]</span></p>
 <ul>
-<li>아하! 결국 오차항이 정규분포를 따르는 회귀모형의 MLE는 MSE를 최소화하는 <span class="math inline">\(\beta_0, \beta_1\)</span>을 구하면 된다!</li>
+<li>아하! 결국 오차항이 정규분포를 따르는 회귀모형의 MLE는 OLS를 최소화하는 <span class="math inline">\(\beta_0, \beta_1\)</span>을 구하면 된다!<span class="math inline">\((\star\star\star)\)</span></li>
 </ul>
+<hr>
 </section>
 <section id="로지스틱" class="level3">
 <h3 class="anchored" data-anchor-id="로지스틱">로지스틱</h3>
@@ -472,7 +478,7 @@ window.Quarto = {
 <p><span class="math display">\[\begin{align*} \frac{d}{d\,p} l(p) &amp;= \frac{\sum x}{p} - \frac{n-\sum x}{1-p} \\ \\
                     &amp;= (1-p)\sum x - p(n-\sum x)  \\ \\
                     &amp;= \sum x  - pn = 0\end{align*}\]</span></p>
-<p><span class="math display">\[\divideontimes \,\,\hat {p}_{mle} = \frac {\sum x}{ n} \]</span></p>
+<p><span class="math display">\[\divideontimes \,\,\hat {p}_{mle} = \frac {\sum x}{ n} = \bar x\]</span></p>
 <p><code>2</code> 로지스틱 복습</p>
 <ul>
 <li><p>지난 시간 로지스틱은 어떤 <code>범주의 속할 확률</code>(동전이 앞면이 나올지, 내가 여자인지 남자인지)을 모형화하는 것이라고 했다…</p></li>
@@ -502,22 +508,67 @@ window.Quarto = {
                       &amp;= \sum y \log (\beta_0 + \beta_1x) - (1-y)\log (1-(\beta_0 + \beta_1x)) \end{align*}\]</span></p>
 <p><span class="math inline">\(\to \sum y \log (\beta_0 + \beta_1x) - (1-y)\log \left (1-(\beta_0 + \beta_1x)\right )\)</span> 와 같은 형태를 <code>BCEloss</code> 라고합니다.(뒤에서 배울거에요.)</p>
 <p><span class="math inline">\(\to\)</span> 즉, 분류범주가 2개인 경우 <code>BCEloss</code>를 이용하며 모형을 학습해 최적의 모형을 산출하는데, 그게 결국 <code>MLE</code>를 통해 최적의 모수를 구하는 것과 같다!</p>
+<p><span class="math inline">\(\to\)</span> 최적의 모형을 적합하기 위해서, <code>OLS</code>, <code>BCELoss</code>를 이용한 최적의 해 산출 방식은 <code>MLE</code>를 이용한 방법과 같다.</p>
+</section>
+<section id="confusion-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="confusion-matrix">confusion matrix</h3>
+<center>
+<img src="4.png" width="500">
+</center>
+<p><code>-</code> 정확도 : <strong>예측값이 실제값과 일치할 비율</strong>(<span class="math inline">\(\star\star\)</span>)</p>
+<div id="4c023f4f-521a-4cce-8a78-9def10c2e6ed" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>(<span class="dv">9644</span> <span class="op">+</span> <span class="dv">81</span>)<span class="op">/</span><span class="dv">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>0.9725</code></pre>
+</div>
+</div>
+<center>
+<img src="4.png" width="500">
+</center>
+<p><code>-</code> 재현율(Recall) : <strong>실제 참(거짓)인 것중에 예측된 참(거짓)의 비율</strong>(<span class="math inline">\(\star\star\star\)</span>)</p>
+<ul>
+<li>회사입장에서는 직장상사(True)가 부하(Predict)한테 일을 시키는 거를 상상해보자.</li>
+</ul>
+<div id="edbb5382-b110-4807-bf8c-dc48ae509afe" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">81</span><span class="op">/</span><span class="dv">333</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>0.24324324324324326</code></pre>
+</div>
+</div>
+<center>
+<img src="4.png" width="500">
+</center>
+<p><code>-</code> 정밀도(Precision) : 예측된 참(거짓)인 것 중에서 실제 참(거짓)의 비율(<span class="math inline">\(\star\star\)</span>)</p>
+<ul>
+<li>모델(후배)의 건방짐</li>
+</ul>
+<div id="b996f0b4-6fa1-4a4a-88c1-aa467cfef5ed" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="dv">81</span><span class="op">/</span><span class="dv">104</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0.7788461538461539</code></pre>
+</div>
+</div>
+<p><code>-</code> 회사의 입장 : 사실 다 중요한 지표입니다.</p>
+<ul>
+<li><p>여기서 말하고 싶은 것은 정확도만 보고 어떤 인사이트나 결과 보고서를 작성하면 안된다.</p></li>
+<li><p>세부 지표를 함께 확인해야한다!</p></li>
+<li><p>저희는 이러한 전체 비율로 어떤 좋아보이지만, 실제 세부 그룹을 나누고 비율이나 평가지표를 계산했을 때 그렇지 않은 경우를 <strong>심슨의 역설(<span class="math inline">\(\star\star\star\)</span>)</strong> 이라고 한다!</p></li>
+</ul>
 <hr>
 </section>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">summary</h2>
 <p><code>1</code> 우도함수는 설명력 함수이다.</p>
-<p><code>2</code> 우도함수는 주어진 모수 (<span class="math inline">\(p, \theta, \mu, \sigma...\)</span>)가 주어졌을 때 <span class="math inline">\(\bf {x}\)</span>를 관측할 <code>확률</code>(or 확률밀도)를 나타낸다.</p>
+<p><code>2</code> 우도함수는 주어진 모수 (<span class="math inline">\(p, \theta, \mu, \sigma...\)</span>)가 주어졌을 때 <span class="math inline">\(\bf {x}\)</span>를 관측할 <code>확률</code>을 나타낸다.</p>
 <p><code>3</code> 어떤 분포, 모형에 관한 최적의 MLE를 구하기 위해서는 우도함수의 로그를 취하고 그것을 미분하여 0을 만족하는 경우를 <code>MLE</code>라고 한다.</p>
 <p><code>4</code> 회귀모형에서 최적의 회귀계수(<span class="math inline">\(\beta_0,\beta_1\)</span>)을 구하는 방법은 <code>MLE</code>를 이용하여 구하는 방법과 동일하다.</p>
 </section>
 <section id="to-do" class="level2">
 <h2 class="anchored" data-anchor-id="to-do">to do</h2>
-<p><code>1</code> 예측 성능 지표</p>
+<p><code>1</code> 예측 성능 or 학습 지표 : cost function(손실함수, 비용함수)</p>
 <p><code>2</code> 고급회귀분석</p>
 <p><code>3</code> 모수 모델 vs 비모수 모델</p>
-<p><code>4</code> cost function(손실함수, 비용함수)</p>
 
 
 </section>

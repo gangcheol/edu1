@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -282,12 +316,12 @@ window.Quarto = {
   <li><a href="#예제-2.-동전을-2회-던지는-실험" id="toc-예제-2.-동전을-2회-던지는-실험" class="nav-link" data-scroll-target="#예제-2.-동전을-2회-던지는-실험">예제 2. 동전을 2회 던지는 실험</a>
   <ul class="collapse">
   <li><a href="#q1.앞면이-두번-나올-확률" id="toc-q1.앞면이-두번-나올-확률" class="nav-link" data-scroll-target="#q1.앞면이-두번-나올-확률">Q1.앞면이 두번 나올 확률</a></li>
-  <li><a href="#q2.-앞면이-한번-나올-확률" id="toc-q2.-앞면이-한번-나올-확률" class="nav-link" data-scroll-target="#q2.-앞면이-한번-나올-확률">Q2. 앞면이 한번 나올 확률</a></li>
+  <li><a href="#q2.-동전을-2번-던졌을-때-앞면이-한번-나올-확률" id="toc-q2.-동전을-2번-던졌을-때-앞면이-한번-나올-확률" class="nav-link" data-scroll-target="#q2.-동전을-2번-던졌을-때-앞면이-한번-나올-확률">Q2. 동전을 2번 던졌을 때 앞면이 한번 나올 확률</a></li>
   </ul></li>
   <li><a href="#예제3.-동전을-3회-던지는-실험" id="toc-예제3.-동전을-3회-던지는-실험" class="nav-link" data-scroll-target="#예제3.-동전을-3회-던지는-실험">예제3. 동전을 3회 던지는 실험</a>
   <ul class="collapse">
   <li><a href="#q1.-모두-앞면이-나올-확률" id="toc-q1.-모두-앞면이-나올-확률" class="nav-link" data-scroll-target="#q1.-모두-앞면이-나올-확률">Q1. 모두 앞면이 나올 확률</a></li>
-  <li><a href="#q2.-앞면이-두번-나올-확률" id="toc-q2.-앞면이-두번-나올-확률" class="nav-link" data-scroll-target="#q2.-앞면이-두번-나올-확률">Q2. 앞면이 두번 나올 확률</a></li>
+  <li><a href="#q2.-동전을-3회-던졌을-때-앞면이-두번-나올-확률" id="toc-q2.-동전을-3회-던졌을-때-앞면이-두번-나올-확률" class="nav-link" data-scroll-target="#q2.-동전을-3회-던졌을-때-앞면이-두번-나올-확률">Q2. 동전을 3회 던졌을 때, 앞면이 두번 나올 확률</a></li>
   </ul></li>
   <li><a href="#베르누이-분포" id="toc-베르누이-분포" class="nav-link" data-scroll-target="#베르누이-분포">베르누이 분포</a></li>
   <li><a href="#이항분포" id="toc-이항분포" class="nav-link" data-scroll-target="#이항분포">이항분포</a></li>
@@ -310,40 +344,88 @@ window.Quarto = {
 <section id="intro" class="level1">
 <h1>Intro</h1>
 <p><code>-</code> 해당 수업에서는 확률에 관한 이론과 회귀분석에 대해 소개합니다.</p>
+<ul>
+<li><p>목표 1 : 어떠한 자료(섭씨, 화씨, 불량품)가 주어졌을 때, 해당 자료가 어떠한 분포를 따르고, 주어진 값에서 <strong>어떠한 확률값을</strong> 가지는 지를 학습한다.</p></li>
+<li><p>목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 활용할 수 있도록 한다!</p></li>
+<li><p>목표 3 : 통계분석(t-test, anova, cor-test, shaipro-test 등등)을 학습하고, python으로 언제든 필요할 때마다 쓸 수 있도록!</p></li>
+</ul>
 <hr>
 </section>
 <section id="확률변수" class="level1">
 <h1>확률변수</h1>
 <p><code>-</code> 확률변수 <span class="math inline">\(X\)</span> : 표본공간 <span class="math inline">\(S\)</span>에 정의된 실수값을 가지는 모든 함수(real-valued function)</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span>가 가질 수 있는 모든 실수값 범위</p></li>
+<li><p><span class="math inline">\(X \in R\)</span> or <span class="math inline">\(X \in S\)</span></p></li>
+</ul>
 <section id="예제-1.-동전-1회-던지는-실험" class="level2">
 <h2 class="anchored" data-anchor-id="예제-1.-동전-1회-던지는-실험">예제 1. 동전 1회 던지는 실험</h2>
-<p><code>1</code> 표본공간 : $X $</p>
-<p><code>2</code> 앞면이 나올 확률은?</p>
+<p><code>1</code> 표본공간 : <span class="math inline">\(X \in \text{[뒤, 앞]} \,= \,\in [0, 1]\)</span></p>
+<p><code>2</code> 앞면이 나올 확률은? <span class="math inline">\(\to P(X_1=1) = 1/2\)</span></p>
 </section>
 <section id="예제-2.-동전을-2회-던지는-실험" class="level2">
 <h2 class="anchored" data-anchor-id="예제-2.-동전을-2회-던지는-실험">예제 2. 동전을 2회 던지는 실험</h2>
+<p><span class="math display">\[S \in [[0,0], [0,1], [1,0], [0,1]] \]</span></p>
 <section id="q1.앞면이-두번-나올-확률" class="level3">
 <h3 class="anchored" data-anchor-id="q1.앞면이-두번-나올-확률">Q1.앞면이 두번 나올 확률</h3>
 <p><code>1</code> 첫 번째 시행 : <span class="math inline">\(X_1 \in \text{[앞, 뒤]} = \,\in [0,1]\)</span></p>
 <p><code>2</code> 두 번째 시행 : <span class="math inline">\(X_2 \in \text{[앞, 뒤]} = \,\in [0,1]\)</span></p>
 <p><code>3</code> 그렇다면 앞면이 두번 나올 확률은?</p>
+<p><span class="math display">\[\begin{align*} P(X_1 =1, X_2 = 1) &amp;= P(X_1=1)P(X_2 =1) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2} = \frac{1}{4} \end{align*}\]</span></p>
 </section>
-<section id="q2.-앞면이-한번-나올-확률" class="level3">
-<h3 class="anchored" data-anchor-id="q2.-앞면이-한번-나올-확률">Q2. 앞면이 한번 나올 확률</h3>
-<p><code>case1</code></p>
-<p><code>case2</code></p>
+<section id="q2.-동전을-2번-던졌을-때-앞면이-한번-나올-확률" class="level3">
+<h3 class="anchored" data-anchor-id="q2.-동전을-2번-던졌을-때-앞면이-한번-나올-확률">Q2. 동전을 2번 던졌을 때 앞면이 한번 나올 확률</h3>
+<p><code>case1</code>. 1번째 동전을 던졌을 때, 앞면이 나오고 2번째 동전을 던졌을 때 뒷면이 나오는 경우</p>
+<p><span class="math display">\[\begin{align*}P(X_1 = 1, X_2 = 0) &amp;= P(X_1=1)P(X_2=0) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2} = \frac{1}{4}   \end{align*}\]</span></p>
+<p><code>case2</code>. 1번째 동전을 던졌을 때, 뒷면이 나오고 2번째 동전을 던졌을 때 앞면이 나오는 경우</p>
+<p><span class="math display">\[\begin{align*}P(X_1 = 0, X_2 = 1) &amp;= P(X_1=0)P(X_2=1) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2} = \frac{1}{4}   \end{align*}\]</span></p>
+<p><span class="math display">\[\text{case1} + \text{case2} = \frac 12\]</span></p>
 </section>
 </section>
 <section id="예제3.-동전을-3회-던지는-실험" class="level2">
 <h2 class="anchored" data-anchor-id="예제3.-동전을-3회-던지는-실험">예제3. 동전을 3회 던지는 실험</h2>
+<p><span class="math display">\[S \in [[0,0,0], [0,0,1], [0,1,1], [1,1,1], [1,0,1], [1,0,0], [0,1,0], [1,1,0]] \]</span></p>
+<p><code>-</code> 표본공간, 경우의 수에 대한 이해</p>
+<ul>
+<li>문제 1. 남자와 여자는 서로 다른 모자를 써야 하는데, 이럴 경우 나올 수 있는 경우의 수는?</li>
+</ul>
+<p><span class="math inline">\(\to\)</span> <code>[남자 1, 여자 1]</code>, <code>[모자 1, 모자2, 모자 3]</code></p>
+<ul>
+<li>문제 2. 남자와 여자는 서로 다른 모자와 신발을 써야 하는데, 이럴 경우 나올 수 있는 경우의 수는?</li>
+</ul>
+<p><span class="math inline">\(\to\)</span> <code>[남자 1, 여자 1]</code>, <code>[모자 1, 모자2, 모자 3]</code>, <code>[신발 1, 신발 2, 신발 3]</code></p>
 <section id="q1.-모두-앞면이-나올-확률" class="level3">
 <h3 class="anchored" data-anchor-id="q1.-모두-앞면이-나올-확률">Q1. 모두 앞면이 나올 확률</h3>
+<p><code>-</code> 모든 경우의 수 : <code>2x2x2=8</code></p>
+<p><code>-</code> 경우의 수 : 1</p>
+<p><code>-</code> 그렇다면 앞면이 3번 나올 확률은?</p>
+<p><span class="math display">\[\begin{align*} P(X_1 =1, X_2 = 1,X_3 = 1) &amp;= P(X_1=1)P(X_2 =1)P(X_3 =1) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2}\times \frac{1}{2} = \frac{1}{8} \end{align*}\]</span></p>
 </section>
-<section id="q2.-앞면이-두번-나올-확률" class="level3">
-<h3 class="anchored" data-anchor-id="q2.-앞면이-두번-나올-확률">Q2. 앞면이 두번 나올 확률</h3>
+<section id="q2.-동전을-3회-던졌을-때-앞면이-두번-나올-확률" class="level3">
+<h3 class="anchored" data-anchor-id="q2.-동전을-3회-던졌을-때-앞면이-두번-나올-확률">Q2. 동전을 3회 던졌을 때, 앞면이 두번 나올 확률</h3>
+<p><code>-</code> 3회 던지는 실험에서 표본 공간</p>
+<p><span class="math display">\[S \in [[0,0,0], [0,0,1], [0,1,1], [1,1,1], [1,0,1], [1,0,0], [0,1,0], [1,1,0]] \]</span></p>
+<p><code>case1</code> 첫번째 앞면, 두번째 앞면, 세번째 뒷면</p>
+<p><span class="math display">\[\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 0) &amp;= P(X_1=1)P(X_2=1)P(X_3=0) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2}\times \frac{1}{2} = \frac{1}{8}   \end{align*}\]</span></p>
+<p><code>case2</code> 첫번째는 앞면, 두번쨰는 뒷면, 세번쨰는 앞면</p>
+<p><span class="math display">\[\begin{align*}P(X_1 = 1, X_2 = 0, X_3 = 1) &amp;= P(X_1=1)P(X_2=0)P(X_3=0) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2}\times \frac{1}{2} = \frac{1}{8}   \end{align*}\]</span></p>
+<p><code>case3</code> 첫번째는 뒷면, 두번째는 앞면, 세번째는 앞면</p>
+<p><span class="math display">\[\begin{align*}P(X_1 = 0, X_2 = 1, X_3 = 1) &amp;= P(X_1=1)P(X_2=0)P(X_3=0) \\ \\
+                                    &amp;= \frac{1}{2}\times \frac{1}{2}\times \frac{1}{2} = \frac{1}{8}   \end{align*}\]</span></p>
+<p><span class="math display">\[\text{case1} + \text{case2} + \text{case3} = \frac 38\]</span></p>
 <p>결국 case1,2,3을 모두 더하면</p>
 <p>동전을 3회 던졌을 때 앞면이 두 번 나올 확률은? <span class="math inline">\(\to \frac{3}{8}\)</span></p>
-<p><code>의문 1</code></p>
+<p><code>의문 1</code> : 뭔가 규칙성이 있어 보인다. 즉, 저거를 한번에 계산하는 어떤 공식이 있겠다….</p>
+<ul>
+<li><p>이러한 것을 빠르게 계산하기 위해서는, 주어진 자료에 대한 확률분포를 알고 있어야한다.</p></li>
+<li><p>다시 목표 1 : <strong>궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습해야 한다.</strong></p></li>
+</ul>
 <hr>
 </section>
 </section>
@@ -355,11 +437,43 @@ window.Quarto = {
 </ul>
 <p><span class="math display">\[X \sim Ber(p)\]</span></p>
 <p><span class="math display">\[P(X)=f(x)= p^{x}(1-p)^{1-x}\]</span></p>
-<p><code>-</code> 다시 동전던지기를 생각해보면? 위 수식 <span class="math inline">\(x\)</span>에 1을 넣거나 0을 넣으면, 주어진 값에 대한 확률을 쉽게 구할 수 있겠죠?</p>
+<p><code>1</code> 표본공간 : <span class="math inline">\(X \in \text{[뒤, 앞]} \,= \,\in [0, 1]\)</span></p>
+<p>p = 1/3</p>
+<p><code>-</code> 앞면이 나오는 경우</p>
+<p><span class="math display">\[P(X = 1) = f(x=1) = p^{1}(1-p)^{0} = (1/3) \times (2/3) = 2/9\]</span></p>
+<p><code>-</code> 뒷면이 나오는 경우</p>
+<p>1-p = q = 2/3</p>
+<p><span class="math display">\[P(X = 0) = f(x=0) =(q)^{1}(1-q)^{1-1} = 2/3\]</span></p>
+<p><code>-</code> 일반화</p>
+<p><span class="math display">\[P(X)=f(x)= p^{x}(1-p)^{1-x}\]</span></p>
 <hr>
 </section>
 <section id="이항분포" class="level2">
 <h2 class="anchored" data-anchor-id="이항분포">이항분포</h2>
+<p><code>-</code> 베르누이 분포를 따르는 <span class="math inline">\(n\)</span>개의 확률변수들이 특정 사건을 <span class="math inline">\(x\)</span>번 일으키는지에 대한 확률분포</p>
+<p><code>-</code> 다시 예제 : 동전을 3회 던졌을 떄 앞면이 2번 나올 확률은?</p>
+<ul>
+<li>접근 : 결국 이항분포를 이용해서 앞면이 2번 나올 확률을 계산하라는 거네?</li>
+</ul>
+<p><code>-</code> 잠깐 중학교 수학 : <code>combination</code></p>
+<p><span class="math display">\[_{n}\mathrm{C}_{x} = \frac{n!}{x!(n-x)!}\]</span></p>
+<ul>
+<li><p>동전을 3번 던졌을 때 앞면이 2번 나오는 경우의 수는?</p>
+<ul>
+<li>동전을 3번 던졌을 때 뒷면이 1번 나오는 경우의 수를 구하는 것과 같습니당</li>
+<li>[1,1,0], [1,0,1], [0,1,1]</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[_{3}\mathrm{C}_{2} \,= \,_{3}\mathrm{C}_{1} =  3\]</span></p>
+<p><code>-</code> 다시 예제를 생각해보면, 우리는 모든 case를 구하고, 그 case 수와 확률값을 곱했다.</p>
+<ul>
+<li><p>근데 우리는 <code>combination</code>을 배웠으니까 위처럼 경우의 수를 쉽게 구할 수 있자나?</p></li>
+<li><p>즉, 3번 던져서 앞면이 2번 나올 확률은 <code>1/8</code>이고 이러한 경우가 <code>3</code>개니까. 답은 <code>3/8</code>이야</p></li>
+</ul>
+<p><span class="math display">\[X \sim B(n,p)\]</span></p>
+<p><span class="math display">\[ f(x) \,=\, _{n}\mathrm{C}_{x}\,p^{x}(1-p)^{n-x}\]</span></p>
+<p><span class="math display">\[f(x = 2) \,= \,_{3}\mathrm{C}_{2}\,\times p^{2}(1-p)^{1} = 3\times \frac 18 = \frac 38 \]</span></p>
+<p><code>-</code> 다시 목표 : <strong>궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!</strong></p>
 <hr>
 </section>
 </section>
@@ -367,9 +481,57 @@ window.Quarto = {
 <h1>회귀분석</h1>
 <section id="intro-1" class="level2">
 <h2 class="anchored" data-anchor-id="intro-1">intro</h2>
+<p><code>1</code> 변수들간의 관계를 모형화하고 조사하는 통계적인 기법</p>
+<p><code>2</code> 가장 널리 활용되는 통계 기법 중 하나이며 머신러닝, 딥러닝을 학습하기 위해 필수적으로 알아햐하는 방법론이다.</p>
+<p><code>3</code> 아들의 키는 아버지의 키로 회귀한다는 말에서 유래됨</p>
 </section>
 <section id="목표" class="level2">
 <h2 class="anchored" data-anchor-id="목표">목표</h2>
+<p><code>1</code> 오차의 존재하에서 변수 간의 관계를 나타내는 수식을 찾아내는 것!</p>
+<p><code>2</code> 즉, 아래와 같은 실생활에서 발견할 수 있는 현상</p>
+<ul>
+<li>날이 더우면, 아이스아메리카노 판매량이 증가한다?</li>
+</ul>
+<p><span class="math display">\[ \text{아이스아메리카노 판매량}= 1.5\times{온도} + \beta_0 + \varepsilon\]</span></p>
+<ul>
+<li>우리가 위와 같은 현상을 발견했으면 아래와 같은 수식을 발견하는 것이 회귀분석의 목적이다!</li>
+</ul>
+<p><span class="math display">\[y \approx 1.5x_1 + \beta_0 \]</span></p>
+<div id="68a77d02-b175-4b19-9674-64d4bb6fd100" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># \ code-fold: true</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">options</span>(<span class="at">repr.plot.res =</span> <span class="dv">200</span>, <span class="at">repr.plot.height =</span> <span class="dv">4</span>,<span class="at">repr.plot.width =</span> <span class="dv">6</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">40</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>error <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>y <span class="ot">=</span> <span class="fl">1.5</span><span class="sc">*</span>x <span class="sc">+</span> error</span>
+<span id="cb1-10"><a href="#cb1-10"></a>hat_y <span class="ot">=</span> <span class="fl">1.5</span><span class="sc">*</span>x</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>data  <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="st">"실제값"</span> <span class="ot">=</span> y, <span class="st">"예측값"</span> <span class="ot">=</span> hat_y)</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="#cb1-15"></a>        <span class="fu">gather</span>(<span class="st">"label"</span>,<span class="st">"value"</span>,<span class="sc">-</span>x) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>            <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> value, <span class="at">color =</span> label)) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>                <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>                <span class="fu">ggtitle</span>(<span class="st">"아메리카노 판매량 예측"</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>                <span class="fu">xlab</span>(<span class="st">"온도"</span>) <span class="sc">+</span> </span>
+<span id="cb1-20"><a href="#cb1-20"></a>                <span class="fu">ylab</span>(<span class="st">"아이스아메리카노 판매량"</span>) <span class="sc">+</span>  </span>
+<span id="cb1-21"><a href="#cb1-21"></a>                <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>,))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="temp_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>-</code> 다시 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 적용할 수 있도록 한다!</p>
+<ul>
+<li><p>이를 학습해서, 결정계수, MSE 등등 최적의 회귀식을 찾기위한 방법론을 학습할 예정</p></li>
+<li><p>또한, 분류문제에서 회귀분석이 어떻게 적용되는지를 학습한다.</p></li>
+</ul>
 
 
 </section>
