@@ -1,97 +1,97 @@
 [
   {
-    "objectID": "posts/test/temp.html",
-    "href": "posts/test/temp.html",
+    "objectID": "posts/ST2024/Intro.html",
+    "href": "posts/ST2024/Intro.html",
     "title": "00. Intro",
     "section": "",
-    "text": "- 해당 수업에서는 확률에 관한 이론과 회귀분석에 대해 소개합니다.\n\n목표 1 : 어떠한 자료(섭씨, 화씨, 불량품)가 주어졌을 때, 해당 자료가 어떠한 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다.\n목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 활용할 수 있도록 한다!\n목표 3 : 통계분석(t-test, anova, cor-test, shaipro-test 등등)을 학습하고, python으로 언제든 필요할 때마다 쓸 수 있도록!",
+    "text": "- 해당 수업에서는 확률에 관한 이론과 회귀분석에 대해 소개합니다.\n- 목표 1 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!\n- 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 활용할 수 있도록 한다!",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#예제-1.-동전-1회-던지는-실험",
-    "href": "posts/test/temp.html#예제-1.-동전-1회-던지는-실험",
+    "objectID": "posts/ST2024/Intro.html#예제-1.-동전-1회-던지는-실험",
+    "href": "posts/ST2024/Intro.html#예제-1.-동전-1회-던지는-실험",
     "title": "00. Intro",
     "section": "예제 1. 동전 1회 던지는 실험",
-    "text": "예제 1. 동전 1회 던지는 실험\n1 표본공간 : \\(X \\in \\text{[뒤, 앞]} \\,= \\,\\in [0, 1]\\)\n2 앞면이 나올 확률은? \\(\\to P(X_1=1) = 1/2\\)",
+    "text": "예제 1. 동전 1회 던지는 실험\n1 표본공간 : $X = [0, 1] $\n2 앞면이 나올 확률은? \\(\\to P(X = 1) = 1/2\\)",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#예제-2.-동전을-2회-던지는-실험",
-    "href": "posts/test/temp.html#예제-2.-동전을-2회-던지는-실험",
+    "objectID": "posts/ST2024/Intro.html#예제-2.-동전을-2회-던지는-실험",
+    "href": "posts/ST2024/Intro.html#예제-2.-동전을-2회-던지는-실험",
     "title": "00. Intro",
     "section": "예제 2. 동전을 2회 던지는 실험",
-    "text": "예제 2. 동전을 2회 던지는 실험\n\\[S \\in [[0,0], [0,1], [1,0], [0,1]] \\]\n\nQ1.앞면이 두번 나올 확률\n1 첫 번째 시행 : \\(X_1 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n2 두 번째 시행 : \\(X_2 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n3 그렇다면 앞면이 두번 나올 확률은?\n\\[\\begin{align*} P(X_1 =1, X_2 = 1) &= P(X_1=1)P(X_2 =1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4} \\end{align*}\\]\n\n\nQ2. 동전을 2번 던졌을 때 앞면이 한번 나올 확률\ncase1. 1번째 동전을 던졌을 때, 앞면이 나오고 2번째 동전을 던졌을 때 뒷면이 나오는 경우\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0) &= P(X_1=1)P(X_2=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\ncase2. 1번째 동전을 던졌을 때, 뒷면이 나오고 2번째 동전을 던졌을 때 앞면이 나오는 경우\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1) &= P(X_1=0)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\n\\[\\text{case1} + \\text{case2} = \\frac 12\\]",
+    "text": "예제 2. 동전을 2회 던지는 실험\n\nQ1.앞면이 두번 나올 확률\n1 첫 번째 시행 : \\(X_1 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n2 두 번째 시행 : \\(X_2 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n3 그렇다면 앞면이 두번 나올 확률은?\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1) &= P(X_1=1)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\n\n\nQ2. 앞면이 한번 나올 확률\ncase1\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1) &= P(X_1=0)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\ncase2\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0) &= P(X_1=0)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\n\\[\\text{case1} + \\text{case2} = \\frac{1}{2}\\]",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#예제3.-동전을-3회-던지는-실험",
-    "href": "posts/test/temp.html#예제3.-동전을-3회-던지는-실험",
+    "objectID": "posts/ST2024/Intro.html#예제3.-동전을-3회-던지는-실험",
+    "href": "posts/ST2024/Intro.html#예제3.-동전을-3회-던지는-실험",
     "title": "00. Intro",
     "section": "예제3. 동전을 3회 던지는 실험",
-    "text": "예제3. 동전을 3회 던지는 실험\n\\[S \\in [[0,0,0], [0,0,1], [0,1,1], [1,1,1], [1,0,1], [1,0,0], [0,1,0], [1,1,0]] \\]\n- 표본공간, 경우의 수에 대한 이해\n\n문제 1. 남자와 여자는 서로 다른 모자를 써야 하는데, 이럴 경우 나올 수 있는 경우의 수는?\n\n\\(\\to\\) [남자 1, 여자 1], [모자 1, 모자2, 모자 3]\n\n문제 2. 남자와 여자는 서로 다른 모자와 신발을 써야 하는데, 이럴 경우 나올 수 있는 경우의 수는?\n\n\\(\\to\\) [남자 1, 여자 1], [모자 1, 모자2, 모자 3], [신발 1, 신발 2, 신발 3]\n\nQ1. 모두 앞면이 나올 확률\n- 모든 경우의 수 : 2x2x2=8\n- 경우의 수 : 1\n- 그렇다면 앞면이 3번 나올 확률은?\n\\[\\begin{align*} P(X_1 =1, X_2 = 1,X_3 = 1) &= P(X_1=1)P(X_2 =1)P(X_3 =1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8} \\end{align*}\\]\n\n\nQ2. 동전을 3회 던졌을 때, 앞면이 두번 나올 확률\n- 3회 던지는 실험에서 표본 공간\n\\[S \\in [[0,0,0], [0,0,1], [0,1,1], [1,1,1], [1,0,1], [1,0,0], [0,1,0], [1,1,0]] \\]\ncase1 첫번째 앞면, 두번째 앞면, 세번째 뒷면\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 0) &= P(X_1=1)P(X_2=1)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase2 첫번째는 앞면, 두번쨰는 뒷면, 세번쨰는 앞면\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase3 첫번째는 뒷면, 두번째는 앞면, 세번째는 앞면\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\n\\[\\text{case1} + \\text{case2} + \\text{case3} = \\frac 38\\]\n결국 case1,2,3을 모두 더하면\n동전을 3회 던졌을 때 앞면이 두 번 나올 확률은? \\(\\to \\frac{3}{8}\\)\n의문 1 : 뭔가 규칙성이 있어 보인다. 즉, 저거를 한번에 계산하는 어떤 공식이 있겠다….\n\n이러한 것을 빠르게 계산하기 위해서는, 주어진 자료에 대한 확률분포를 알고 있어야한다.\n다시 목표 1 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습해야 한다.",
+    "text": "예제3. 동전을 3회 던지는 실험\n\nQ1. 모두 앞면이 나올 확률\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 1) &= P(X_1=1)P(X_2=1)P(X_3=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\n\n\nQ2. 앞면이 두번 나올 확률\ncase1\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 0) &= P(X_1=1)P(X_2=1)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase2\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase3\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\n결국 case1,2,3을 모두 더하면\n동전을 3회 던졌을 때 앞면이 두 번 나올 확률은? \\(\\to \\frac{3}{8}\\)\n의문 1 : 뭔가 규칙성이 있어 보이기 때문에, 저거를 한번에 계산하는 어떤 공식이 있을 것 같에요.\n\n이러한 것을 빠르게 계산하기 위해서는, 주어진 자료에 대한 확률분포를 알고 있어야 한다.\n다시 목표 1 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#베르누이-분포",
-    "href": "posts/test/temp.html#베르누이-분포",
+    "objectID": "posts/ST2024/Intro.html#베르누이-분포",
+    "href": "posts/ST2024/Intro.html#베르누이-분포",
     "title": "00. Intro",
     "section": "베르누이 분포",
-    "text": "베르누이 분포\n- 성공과 실패와 같이 두 가지 결과만 나타나는 실험에 대한 확률분포\n\n관심있는 사건이 등장할 확률이 \\(p\\)인 실험\n\n\\[X \\sim Ber(p)\\]\n\\[P(X)=f(x)= p^{x}(1-p)^{1-x}\\]\n1 표본공간 : \\(X \\in \\text{[뒤, 앞]} \\,= \\,\\in [0, 1]\\)\np = 1/3\n- 앞면이 나오는 경우\n\\[P(X = 1) = f(x=1) = p^{1}(1-p)^{0} = (1/3) \\times (2/3) = 2/9\\]\n- 뒷면이 나오는 경우\n1-p = q = 2/3\n\\[P(X = 0) = f(x=0) =(q)^{1}(1-q)^{1-1} = 2/3\\]\n- 일반화\n\\[P(X)=f(x)= p^{x}(1-p)^{1-x}\\]",
+    "text": "베르누이 분포\n- 성공과 실패와 같이 두 가지 결과만 나타나는 실험에 대한 확률분포\n\n관심있는 사건이 등장할 확률이 \\(p\\)인 실험\n\n\\[X \\sim Ber(p)\\]\n\\[P(X)=f(x)= p^{x}(1-p)^{1-x}\\]\n- 다시 동전던지기를 생각해보면? 위 수식 \\(x\\)에 1을 넣거나 0을 넣으면, 주어진 값에 대한 확률을 쉽게 구할 수 있겠죠?",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#이항분포",
-    "href": "posts/test/temp.html#이항분포",
+    "objectID": "posts/ST2024/Intro.html#이항분포",
+    "href": "posts/ST2024/Intro.html#이항분포",
     "title": "00. Intro",
     "section": "이항분포",
-    "text": "이항분포\n- 베르누이 분포를 따르는 \\(n\\)개의 확률변수들이 특정 사건을 \\(x\\)번 일으키는지에 대한 확률분포\n- 다시 예제 : 동전을 3회 던졌을 떄 앞면이 2번 나올 확률은?\n\n접근 : 결국 이항분포를 이용해서 앞면이 2번 나올 확률을 계산하라는 거네?\n\n- 잠깐 중학교 수학 : combination\n\\[_{n}\\mathrm{C}_{x} = \\frac{n!}{x!(n-x)!}\\]\n\n동전을 3번 던졌을 때 앞면이 2번 나오는 경우의 수는?\n\n동전을 3번 던졌을 때 뒷면이 1번 나오는 경우의 수를 구하는 것과 같습니당\n[1,1,0], [1,0,1], [0,1,1]\n\n\n\\[_{3}\\mathrm{C}_{2} \\,= \\,_{3}\\mathrm{C}_{1} =  3\\]\n- 다시 예제를 생각해보면, 우리는 모든 case를 구하고, 그 case 수와 확률값을 곱했다.\n\n근데 우리는 combination을 배웠으니까 위처럼 경우의 수를 쉽게 구할 수 있자나?\n즉, 3번 던져서 앞면이 2번 나올 확률은 1/8이고 이러한 경우가 3개니까. 답은 3/8이야\n\n\\[X \\sim B(n,p)\\]\n\\[ f(x) \\,=\\, _{n}\\mathrm{C}_{x}\\,p^{x}(1-p)^{n-x}\\]\n\\[f(x = 2) \\,= \\,_{3}\\mathrm{C}_{2}\\,\\times p^{2}(1-p)^{1} = 3\\times \\frac 18 = \\frac 38 \\]\n- 다시 목표 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!",
+    "text": "이항분포\n- 베르누이 분포를 따르는 \\(n\\)개의 확률변수들이 특정 사건을 \\(x\\)번 일으키는지에 대한 확률분포\n- 다시 예제 : 동전을 3회 던졌을 떄 앞면이 2번 나올 확률은?\n\n접근 : 이항분포를 이용해서 앞면이 2번 나올 확률을 계산하라는 거네?\n\n- 잠깐 중학교 수학 : combination\n\\[_{n}\\mathrm{C}_{x} = \\frac{n!}{x!(n-x)!}\\]\n\n동전을 3번 던졌을 때 앞면이 2번 나오는 경우의 수는?\n\n동전을 3번 던졌을 때 뒷면이 1번 나오는 경우의 수를 구하는 것과 같습니당\n[1,1,0], [1,0,1], [0,1,1]\n\n\n\\[_{3}\\mathrm{C}_{2} \\,= \\,_{3}\\mathrm{C}_{1} =  3\\]\n- 다시 예제를 생각해보면, 우리는 모든 case를 구하고, 그 case 수와 확률값을 곱했다.\n\n근데 우리는 combination을 배웠으니까 위처럼 경우의 수를 쉽게 구할 수 있자나?\n즉, 3번 던져서 앞면이 2번 나올 확률은 1/8이고 이러한 경우가 3개니까. 답은 3/8이야\n\n- 이를 이항분포로 나타내면?\n\\[X \\sim B(n,p)\\]\n\\[ f(x) \\,=\\, _{n}\\mathrm{C}_{x}\\,p^{x}(1-p)^{n-x}\\]\n\\[f(x = 2) \\,= \\,_{3}\\mathrm{C}_{2}\\,\\times p^{2}(1-p)^{1} = 3\\times \\frac 18 = \\frac 38 \\]\n- 다시 목표 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#intro-1",
-    "href": "posts/test/temp.html#intro-1",
+    "objectID": "posts/ST2024/Intro.html#intro-1",
+    "href": "posts/ST2024/Intro.html#intro-1",
     "title": "00. Intro",
     "section": "intro",
     "text": "intro\n1 변수들간의 관계를 모형화하고 조사하는 통계적인 기법\n2 가장 널리 활용되는 통계 기법 중 하나이며 머신러닝, 딥러닝을 학습하기 위해 필수적으로 알아햐하는 방법론이다.\n3 아들의 키는 아버지의 키로 회귀한다는 말에서 유래됨",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
   {
-    "objectID": "posts/test/temp.html#목표",
-    "href": "posts/test/temp.html#목표",
+    "objectID": "posts/ST2024/Intro.html#목표",
+    "href": "posts/ST2024/Intro.html#목표",
     "title": "00. Intro",
     "section": "목표",
-    "text": "목표\n1 오차의 존재하에서 변수 간의 관계를 나타내는 수식을 찾아내는 것!\n2 즉, 아래와 같은 실생활에서 발견할 수 있는 현상\n\n날이 더우면, 아이스아메리카노 판매량이 증가한다?\n\n\\[ \\text{아이스아메리카노 판매량}= 1.5\\times{온도} + \\beta_0 + \\varepsilon\\]\n\n우리가 위와 같은 현상을 발견했으면 아래와 같은 수식을 발견하는 것이 회귀분석의 목적이다!\n\n\\[y \\approx 1.5x_1 + \\beta_0 \\]\n\n# \\ code-fold: true\nlibrary(tidyverse)\n\noptions(repr.plot.res = 200, repr.plot.height = 4,repr.plot.width = 6)\nlibrary(tidyverse)\n\nx = seq(-10,40, length.out = 1000)\nerror = rnorm(1000)*10\ny = 1.5*x + error\nhat_y = 1.5*x\n\ndata  = tibble(x = x, \"실제값\" = y, \"예측값\" = hat_y)\n\ndata %&gt;% \n        gather(\"label\",\"value\",-x) %&gt;%\n            ggplot(aes(x = x, y = value, color = label)) +\n                geom_point(alpha = 0.2) +\n                ggtitle(\"아메리카노 판매량 예측\") +\n                xlab(\"온도\") + \n                ylab(\"아이스아메리카노 판매량\") +  \n                theme(plot.title = element_text(hjust = 0.5,))\n\n\n\n\n\n\n\n\n- 다시 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 적용할 수 있도록 한다!\n\n이를 학습해서, 결정계수, MSE 등등 최적의 회귀식을 찾기위한 방법론을 학습할 예정\n또한, 분류문제에서 회귀분석이 어떻게 적용되는지를 학습한다.",
+    "text": "목표\n1 오차의 존재하에서 변수 간의 관계를 나타내는 수식을 찾아내는 것!\n2 즉, 아래와 같은 실생활에서 발견할 수 있는 현상\n\n날이 더우면, 아이스아메리카노 판매량이 증가한다?\n\n\\[ \\text{아이스아메리카노 판매량}= 1.5\\times{온도} + \\beta_0 + \\varepsilon\\]\n\n우리가 위와 같은 현상을 발견했으면 아래와 같은 수식을 발견하는 것이 회귀분석의 목적이다!\n\n\\[y \\approx 1.5x_1 + \\beta_0 \\]\n\n# \\ code-fold: true\nlibrary(tidyverse)\n\noptions(repr.plot.res = 200, repr.plot.height = 4,repr.plot.width = 6)\nlibrary(tidyverse)\n\nx = seq(-10,40, length.out = 1000)\nerror = rnorm(1000)*10\ny = 1.5*x + error\nhat_y = 1.5*x\n\ndata  = tibble(x = x, \"실제값\" = y, \"예측값\" = hat_y)\n\ndata %&gt;% \n        gather(\"label\",\"value\",-x) %&gt;%\n            ggplot(aes(x = x, y = value, color = label)) +\n                geom_point(alpha = 0.2) +\n                ggtitle(\"아메리카노 판매량 예측\") +\n                xlab(\"온도\") + \n                ylab(\"아이스아메리카노 판매량\") +  \n                theme(plot.title = element_text(hjust = 0.5,))\n\n\n\n\n\n\n\n\n- 다시 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 적용할 수 있도록 한다!\n\n이를 학습하며, 결정계수, MSE 등등 최적의 회귀식을 찾기위한 방법론을 학습할 예정\n또한, 분류문제에서 회귀분석이 어떻게 적용되는지를 학습한다.",
     "crumbs": [
       "Posts",
-      "Test",
+      "ST2024",
       "00. Intro"
     ]
   },
@@ -241,7 +241,7 @@
     "href": "index.html",
     "title": "edu1",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 15, 2024\n\n\n00. Intro\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. Intro\n\n\nGC \n\n\n\n\nApr 10, 2024\n\n\n03. MLE\n\n\ngc \n\n\n\n\nApr 3, 2024\n\n\n02. stat & ML basic\n\n\nGC \n\n\n\n\nMar 28, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\nMar 26, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nAug 19, 2023\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 25, 2024\n\n\n04. advanced LM\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. Intro\n\n\nGC \n\n\n\n\nApr 10, 2024\n\n\n03. MLE\n\n\ngc \n\n\n\n\nApr 3, 2024\n\n\n02. stat & ML basic\n\n\nGC \n\n\n\n\nMar 28, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\nMar 26, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nAug 19, 2023\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
@@ -315,99 +315,39 @@
     ]
   },
   {
-    "objectID": "posts/test/Intro.html",
-    "href": "posts/test/Intro.html",
-    "title": "00. Intro",
+    "objectID": "posts/PBA2024/2024-04-24-04. advanced lm.html",
+    "href": "posts/PBA2024/2024-04-24-04. advanced lm.html",
+    "title": "04. advanced LM",
     "section": "",
-    "text": "- 해당 수업에서는 확률에 관한 이론과 회귀분석에 대해 소개합니다.\n- 목표 1 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!\n- 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 활용할 수 있도록 한다!",
+    "text": "- 회귀분석은 설명변수 \\(\\boldsymbol{X} = [x_1,x_2, \\dots x_p]\\)를 이용하여 반응변수 \\(y\\)를 예측하기 위해 가장 널리 활용되는 통계적 모형이다.\n- 아래와 같은 형태의 함수를 찾는 것\n\\[y \\approx \\beta_1 x_1 + \\beta_0 \\]\n- OLS, MLE 기법들을 활용하여 \\(\\beta_1,\\beta_0\\)를 추정하는 방법을 학습함.\n\\[(\\hat {\\beta_0}, \\hat {\\beta_1}) = \\left (\\bar y - \\hat {\\beta}_1\\bar x. \\,\\, \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x-\\bar x)(y-\\bar y)}{\\sum (x-\\bar x)^2} = \\frac{\\sum (x-\\bar x)y}{S_{xx}}\\right )\\]\n- 오늘은 진도를 빼기 전에, 조금 더 이전에 학습한 것들을 자세히 학습하는 시간을 가질 것임",
     "crumbs": [
       "Posts",
-      "Test",
-      "00. Intro"
+      "PBA2024",
+      "04. advanced LM"
     ]
   },
   {
-    "objectID": "posts/test/Intro.html#예제-1.-동전-1회-던지는-실험",
-    "href": "posts/test/Intro.html#예제-1.-동전-1회-던지는-실험",
-    "title": "00. Intro",
-    "section": "예제 1. 동전 1회 던지는 실험",
-    "text": "예제 1. 동전 1회 던지는 실험\n1 표본공간 : $X = [0, 1] $\n2 앞면이 나올 확률은? \\(\\to P(X = 1) = 1/2\\)",
+    "objectID": "posts/PBA2024/2024-04-24-04. advanced lm.html#최소제곱추정량ols의-설징",
+    "href": "posts/PBA2024/2024-04-24-04. advanced lm.html#최소제곱추정량ols의-설징",
+    "title": "04. advanced LM",
+    "section": "최소제곱추정량(OLS)의 설징",
+    "text": "최소제곱추정량(OLS)의 설징\n- 용어정리\n\n\\(\\hat y_i\\) : \\(i\\)번째 관측치의 적합치(=fitted value)\n\\(\\beta_1\\) : 기울기(slope)\n\\(\\beta_0\\) : 절편(intercept)\n\\(\\epsilon_i = \\hat y_i - y_i\\) : \\(i\\)번째 관측치의 오차(=잔차)\n\n잔차는 후에 모형의 가정을 체크하는데 있어서 매우 중요한 역할을 한다.\n\n불편추정량 : 추정량의 기대값이 실제 모수와 같은 추정량\n\n\\[E(\\hat {\\beta_1}) = \\beta_1\\]\n\\(\\to\\) proof\n1 $(x-x) = 0 $\n2 \\(\\sum(x-\\bar x)^2 = \\sum(x-\\bar x)x = S_{xx}\\)\n3 \\(E(y) = \\beta_0 + \\beta_1x\\)\n\\[\\begin{align*} E(\\hat {\\beta_1}) &= \\frac{\\sum(x-\\bar x)}{S_{xx}}E(y)  \\\\ \\\\\n                                   &= \\frac{\\sum(x-\\bar x)(\\beta_0+\\beta_1x_1)}{S_xx} \\\\ \\\\\n                                   &= \\frac{\\sum(x-\\bar x)\\beta_0 + \\beta_1\\sum(x-\\bar x)x}{S_{xx}} \\\\ \\\\\n                                   &= \\frac{0 + \\beta_1S_{xx}}{S_{xx}} = \\beta_1\n                                    \\end{align*}\\]\n따라서 OLS를 이용하여 추정한 \\(\\hat {\\beta_1}\\)은 불편추정량이다!\n\\[\\begin {align*} E(\\hat {\\beta_0}) &=  E(\\bar y - \\hat \\beta_1\\bar x) \\\\ \\\\\n                                    &= \\bar y  - \\beta_1\\bar x \\\\ \\\\\n                                    &= (\\beta_1 x_1 + \\beta_0) - \\beta_1 x_1 = \\beta_0 \\end{align*}\\]\n\n이 불편추정량의 성질로 인해 이런 말로도 쓴다.\n\n회귀분석은 주어진 관측치를 이용하여 어떤 현상에 대한 평균반응량을 구하는 것과 같다.\n\n\n\n\n회귀계수의 분산\n1 \\(\\hat {\\beta_1}\\)의 분산\n\n\\(\\hat {\\beta_1} = \\sum\\frac{(x-\\bar x)y}{S_{xx}}, Var(y) = Var(\\epsilon) = \\sigma^2\\)\n\n\\[\\begin{align*} Var(\\hat {\\beta}_1) &= Var(\\sum\\frac{(x-\\bar x)y}{S_{xx}}) \\\\ \\\\\n                                     &= \\sum \\frac {(x-\\bar x)^2}{S_{xx}^2} Var(y) \\\\ \\\\\n                                     &=  \\frac{\\sigma^2}{S_{xx}}\\end {align*}\\]\n2 \\(\\hat \\beta_{0}\\)의 분산\n\n$_0 = y - _1 x $\n\n\\[\\begin{align*} Var(\\hat {\\beta}_0) &= Var(\\bar y) - (\\bar x)^2Var(\\hat {\\beta}_1) - 2\\bar x Cov(\\bar y, \\hat {\\hat {\\beta}_1}) \\\\ \\\\\n                                     &= \\frac {\\sigma^2}{n} -  (\\bar x)^2 \\frac{\\sigma^2}{S_{xx}}  + 0 \\\\ \\\\\n                                     &= \\sigma^2 \\left ( \\frac 1n + \\frac {(\\bar x)^2}{S_{xx}}\\right)\n                            \\end{align*}\\]\n\n\n몇 가지 이론적인 성질(참고)\n1 \\(\\sum \\epsilon_i = \\sum \\epsilon_i x_I = 0\\)\n2 \\(\\sum y_i = \\sum \\hat {y}_i\\)\n3 \\(\\sum \\hat {y}_i \\epsilon_i = 0\\)",
     "crumbs": [
       "Posts",
-      "Test",
-      "00. Intro"
+      "PBA2024",
+      "04. advanced LM"
     ]
   },
   {
-    "objectID": "posts/test/Intro.html#예제-2.-동전을-2회-던지는-실험",
-    "href": "posts/test/Intro.html#예제-2.-동전을-2회-던지는-실험",
-    "title": "00. Intro",
-    "section": "예제 2. 동전을 2회 던지는 실험",
-    "text": "예제 2. 동전을 2회 던지는 실험\n\nQ1.앞면이 두번 나올 확률\n1 첫 번째 시행 : \\(X_1 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n2 두 번째 시행 : \\(X_2 \\in \\text{[앞, 뒤]} = \\,\\in [0,1]\\)\n3 그렇다면 앞면이 두번 나올 확률은?\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1) &= P(X_1=1)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\n\n\nQ2. 앞면이 한번 나올 확률\ncase1\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1) &= P(X_1=0)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\ncase2\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0) &= P(X_1=0)P(X_2=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{4}   \\end{align*}\\]\n\\[\\text{case1} + \\text{case2} = \\frac{1}{2}\\]",
+    "objectID": "posts/PBA2024/2024-04-24-04. advanced lm.html#오차항의-분산-추정",
+    "href": "posts/PBA2024/2024-04-24-04. advanced lm.html#오차항의-분산-추정",
+    "title": "04. advanced LM",
+    "section": "오차항의 분산 추정",
+    "text": "오차항의 분산 추정\n\\[Var(y) = Var(\\epsilon) = \\sigma^2\\]\n1 오차항은 회귀계수의 추정에서는 중요하지 않으나, 우리가 추정한 회기계수의 신뢰구간 구성, 가설 검정에서 필요함\n2 오차항의 추정치를 다음과 같이 정의한다.\n\\[\\hat {\\sigma}^2 = \\frac{\\sum{(y - \\hat y)^2}}{n-2} = \\frac{SSE}{n-2} = MSE\\]\n\n또한, 이렇게도 정의할 수 있음\n\n\\[MSE =  Var(\\hat y) + \\text{bias}^2 = Var(\\hat y) + (E(\\hat y) - y)^2 \\]\n3 n-2를 이용하여 오차제곱합의 평균인 MSE를 산출하는 이유?\n\n카이제곱분포의 가법성의 성질을 알아햐 하나 넘어간다.\n이렇게 생각하자. 만약에 어떤 모집단의 평균을 우리가 알고 있다고 하자. 그러면 우리는 n-1개의 정보만 있으면 모평균의 추정치를 구할 수 있다.\n\n\\(\\to\\) 예제 : 우리는 저기 비어있는 관측치가 무엇인지 몰라도 모평균을 알고 있기 때문에 3개의 정보만으로도 모평균을 짐작할 수 있음\n\\(E(X) = 2.5\\)\nx = [1,2,?,4]\n\n자, 다시 우리는 앞에서 이론적으로 \\(E(\\hat {\\beta}_0), E(\\hat {\\beta}_1)\\)이 불편추정량임을 증명하였음\n그러면, 우리는 어떤 추정량의 정보 2개를 이미 알고 있으니까 n-2개의 정보만 있으면 된다.\n정리 : SSE의 자유도는 n-(예측변수 개수 + 1)이다!\n\n4 회귀모형의 유의성 검정\n\\[H_0 : \\beta_1 = 0, \\quad H_1 = \\beta_1 \\neq 0  \\]\n\n검정통계량\n\n\\[t = \\frac{\\hat \\beta_1}{se(\\hat {\\beta_1})}\\]\n\n위 통계량의 절대값이 자유도 n-2의 t분포 분위수보다 크면 귀무가설을 기각, 즉 회귀모형이 유의하다고 할 수 있다.\n\n\\[|t| &gt; t_{\\alpha/2., n-2}\\]\n5 MSE는 모형의 잔차로부터 추정되므로 모형에 깊게 의존한다. 즉, 모형이 잘못 설정된 경우 유용성이 심각하게 저하됨\n6 또한, MSE는 불편추정량이다.(카이제곱 통계량을 알면 구하기 쉬움) : 교재에서 그냥 스쳐지나갔으니 넘어가겠습니다.(숙제?)\n\n\\(E(\\hat {\\sigma}^2) = \\sigma^2\\)",
     "crumbs": [
       "Posts",
-      "Test",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/test/Intro.html#예제3.-동전을-3회-던지는-실험",
-    "href": "posts/test/Intro.html#예제3.-동전을-3회-던지는-실험",
-    "title": "00. Intro",
-    "section": "예제3. 동전을 3회 던지는 실험",
-    "text": "예제3. 동전을 3회 던지는 실험\n\nQ1. 모두 앞면이 나올 확률\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 1) &= P(X_1=1)P(X_2=1)P(X_3=1) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\n\n\nQ2. 앞면이 두번 나올 확률\ncase1\n\\[\\begin{align*}P(X_1 = 1, X_2 = 1, X_3 = 0) &= P(X_1=1)P(X_2=1)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase2\n\\[\\begin{align*}P(X_1 = 1, X_2 = 0, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\ncase3\n\\[\\begin{align*}P(X_1 = 0, X_2 = 1, X_3 = 1) &= P(X_1=1)P(X_2=0)P(X_3=0) \\\\ \\\\\n                                    &= \\frac{1}{2}\\times \\frac{1}{2}\\times \\frac{1}{2} = \\frac{1}{8}   \\end{align*}\\]\n결국 case1,2,3을 모두 더하면\n동전을 3회 던졌을 때 앞면이 두 번 나올 확률은? \\(\\to \\frac{3}{8}\\)\n의문 1 : 뭔가 규칙성이 있어 보이기 때문에, 저거를 한번에 계산하는 어떤 공식이 있을 것 같에요.\n\n이러한 것을 빠르게 계산하기 위해서는, 주어진 자료에 대한 확률분포를 알고 있어야 한다.\n다시 목표 1 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!",
-    "crumbs": [
-      "Posts",
-      "Test",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/test/Intro.html#베르누이-분포",
-    "href": "posts/test/Intro.html#베르누이-분포",
-    "title": "00. Intro",
-    "section": "베르누이 분포",
-    "text": "베르누이 분포\n- 성공과 실패와 같이 두 가지 결과만 나타나는 실험에 대한 확률분포\n\n관심있는 사건이 등장할 확률이 \\(p\\)인 실험\n\n\\[X \\sim Ber(p)\\]\n\\[P(X)=f(x)= p^{x}(1-p)^{1-x}\\]\n- 다시 동전던지기를 생각해보면? 위 수식 \\(x\\)에 1을 넣거나 0을 넣으면, 주어진 값에 대한 확률을 쉽게 구할 수 있겠죠?",
-    "crumbs": [
-      "Posts",
-      "Test",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/test/Intro.html#이항분포",
-    "href": "posts/test/Intro.html#이항분포",
-    "title": "00. Intro",
-    "section": "이항분포",
-    "text": "이항분포\n- 베르누이 분포를 따르는 \\(n\\)개의 확률변수들이 특정 사건을 \\(x\\)번 일으키는지에 대한 확률분포\n- 다시 예제 : 동전을 3회 던졌을 떄 앞면이 2번 나올 확률은?\n\n접근 : 이항분포를 이용해서 앞면이 2번 나올 확률을 계산하라는 거네?\n\n- 잠깐 중학교 수학 : combination\n\\[_{n}\\mathrm{C}_{x} = \\frac{n!}{x!(n-x)!}\\]\n\n동전을 3번 던졌을 때 앞면이 2번 나오는 경우의 수는?\n\n동전을 3번 던졌을 때 뒷면이 1번 나오는 경우의 수를 구하는 것과 같습니당\n[1,1,0], [1,0,1], [0,1,1]\n\n\n\\[_{3}\\mathrm{C}_{2} \\,= \\,_{3}\\mathrm{C}_{1} =  3\\]\n- 다시 예제를 생각해보면, 우리는 모든 case를 구하고, 그 case 수와 확률값을 곱했다.\n\n근데 우리는 combination을 배웠으니까 위처럼 경우의 수를 쉽게 구할 수 있자나?\n즉, 3번 던져서 앞면이 2번 나올 확률은 1/8이고 이러한 경우가 3개니까. 답은 3/8이야\n\n- 이를 이항분포로 나타내면?\n\\[X \\sim B(n,p)\\]\n\\[ f(x) \\,=\\, _{n}\\mathrm{C}_{x}\\,p^{x}(1-p)^{n-x}\\]\n\\[f(x = 2) \\,= \\,_{3}\\mathrm{C}_{2}\\,\\times p^{2}(1-p)^{1} = 3\\times \\frac 18 = \\frac 38 \\]\n- 다시 목표 : 궁극적으로 어떠한 자료가 주어졌을 때, 해당 자료가 어떤 분포를 따르고, 주어진 값에서 어떠한 확률값을 가지는 지를 학습한다!",
-    "crumbs": [
-      "Posts",
-      "Test",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/test/Intro.html#intro-1",
-    "href": "posts/test/Intro.html#intro-1",
-    "title": "00. Intro",
-    "section": "intro",
-    "text": "intro\n1 변수들간의 관계를 모형화하고 조사하는 통계적인 기법\n2 가장 널리 활용되는 통계 기법 중 하나이며 머신러닝, 딥러닝을 학습하기 위해 필수적으로 알아햐하는 방법론이다.\n3 아들의 키는 아버지의 키로 회귀한다는 말에서 유래됨",
-    "crumbs": [
-      "Posts",
-      "Test",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/test/Intro.html#목표",
-    "href": "posts/test/Intro.html#목표",
-    "title": "00. Intro",
-    "section": "목표",
-    "text": "목표\n1 오차의 존재하에서 변수 간의 관계를 나타내는 수식을 찾아내는 것!\n2 즉, 아래와 같은 실생활에서 발견할 수 있는 현상\n\n날이 더우면, 아이스아메리카노 판매량이 증가한다?\n\n\\[ \\text{아이스아메리카노 판매량}= 1.5\\times{온도} + \\beta_0 + \\varepsilon\\]\n\n우리가 위와 같은 현상을 발견했으면 아래와 같은 수식을 발견하는 것이 회귀분석의 목적이다!\n\n\\[y \\approx 1.5x_1 + \\beta_0 \\]\n\n# \\ code-fold: true\nlibrary(tidyverse)\n\noptions(repr.plot.res = 200, repr.plot.height = 4,repr.plot.width = 6)\nlibrary(tidyverse)\n\nx = seq(-10,40, length.out = 1000)\nerror = rnorm(1000)*10\ny = 1.5*x + error\nhat_y = 1.5*x\n\ndata  = tibble(x = x, \"실제값\" = y, \"예측값\" = hat_y)\n\ndata %&gt;% \n        gather(\"label\",\"value\",-x) %&gt;%\n            ggplot(aes(x = x, y = value, color = label)) +\n                geom_point(alpha = 0.2) +\n                ggtitle(\"아메리카노 판매량 예측\") +\n                xlab(\"온도\") + \n                ylab(\"아이스아메리카노 판매량\") +  \n                theme(plot.title = element_text(hjust = 0.5,))\n\n\n\n\n\n\n\n\n- 다시 목표 2 : 다양한 회귀분석 이론을 학습하고, 적용해보며 실생활에 적용할 수 있도록 한다!\n\n이를 학습하며, 결정계수, MSE 등등 최적의 회귀식을 찾기위한 방법론을 학습할 예정\n또한, 분류문제에서 회귀분석이 어떻게 적용되는지를 학습한다.",
-    "crumbs": [
-      "Posts",
-      "Test",
-      "00. Intro"
+      "PBA2024",
+      "04. advanced LM"
     ]
   }
 ]
