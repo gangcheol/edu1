@@ -204,14 +204,14 @@
     ]
   },
   {
-    "objectID": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
-    "href": "posts/2024-03-26-00. jupyter 단축키 추가법.html",
-    "title": "00. jupyter lab 단축키 추가",
+    "objectID": "posts/2024-04-15-00. Plotly test.html",
+    "href": "posts/2024-04-15-00. Plotly test.html",
+    "title": "00. Plotly test",
     "section": "",
-    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "text": "import\n\nimport plotly.express as ex\nimport plotly.express as px\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook_connected\"\nimport numpy as np\nimport pandas as pd\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/kalilurrahman/datasets/main/mobilephonemktshare2020.csv')\ndf.head()\n\n\n\n\n\n\n\n\n\nDate\nSamsung\nApple\nHuawei\nXiaomi\nOppo\nMobicel\nMotorola\nLG\nOthers\nRealme\nGoogle\nNokia\nLenovo\nOnePlus\nSony\nAsus\n\n\n\n\n0\n2019-10\n31.49\n22.09\n10.02\n7.79\n4.10\n3.15\n2.41\n2.40\n9.51\n0.54\n2.35\n0.95\n0.96\n0.70\n0.84\n0.74\n\n\n1\n2019-11\n31.36\n22.90\n10.18\n8.16\n4.42\n3.41\n2.40\n2.40\n9.10\n0.78\n0.66\n0.97\n0.97\n0.73\n0.83\n0.75\n\n\n2\n2019-12\n31.37\n24.79\n9.95\n7.73\n4.23\n3.19\n2.50\n2.54\n8.13\n0.84\n0.75\n0.90\n0.87\n0.74\n0.77\n0.70\n\n\n3\n2020-01\n31.29\n24.76\n10.61\n8.10\n4.25\n3.02\n2.42\n2.40\n7.55\n0.88\n0.69\n0.88\n0.86\n0.79\n0.80\n0.69\n\n\n4\n2020-02\n30.91\n25.89\n10.98\n7.80\n4.31\n2.89\n2.36\n2.34\n7.06\n0.89\n0.70\n0.81\n0.77\n0.78\n0.80\n0.69\n\n\n\n\n\n\n\n\n\ndf.set_index(\"Date\").diff().\\\n  dropna().boxplot(backend = \"plotly\")",
     "crumbs": [
       "Posts",
-      "00. jupyter lab 단축키 추가"
+      "00. Plotly test"
     ]
   },
   {
@@ -219,7 +219,7 @@
     "href": "index.html",
     "title": "edu1",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 26, 2024\n\n\n04. advanced LM\n\n\nGC \n\n\n\n\nMay 19, 2024\n\n\n03. MLE\n\n\ngc \n\n\n\n\nMay 12, 2024\n\n\n02. stat & ML basic\n\n\nGC \n\n\n\n\nMay 5, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nApr 28, 2024\n\n\nExtra 00. tidydata\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. Intro\n\n\nGC \n\n\n\n\nMar 28, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\nAug 19, 2023\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 26, 2024\n\n\n04. advanced LM\n\n\nGC \n\n\n\n\nMay 19, 2024\n\n\n03. MLE\n\n\ngc \n\n\n\n\nMay 12, 2024\n\n\n02. stat & ML basic\n\n\nGC \n\n\n\n\nMay 5, 2024\n\n\n01. intro\n\n\nGC \n\n\n\n\nApr 28, 2024\n\n\nExtra 00. tidydata\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. Intro\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. Plotly test\n\n\nGC \n\n\n\n\nApr 15, 2024\n\n\n00. jupyter lab 단축키 추가\n\n\nGC \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -232,14 +232,14 @@
     ]
   },
   {
-    "objectID": "posts/2023-08-19-00. Plotly test.html",
-    "href": "posts/2023-08-19-00. Plotly test.html",
-    "title": "00. Plotly test",
+    "objectID": "posts/2024-04-15-00. jupyter 단축키 추가법.html",
+    "href": "posts/2024-04-15-00. jupyter 단축키 추가법.html",
+    "title": "00. jupyter lab 단축키 추가",
     "section": "",
-    "text": "import\n\nimport plotly.express as ex\nimport plotly.express as px\nimport plotly.io as pio\npio.renderers.default = \"plotly_mimetype+notebook_connected\"\nimport numpy as np\nimport pandas as pd\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/kalilurrahman/datasets/main/mobilephonemktshare2020.csv')\ndf.head()\n\n\n\n\n\n\n\n\n\nDate\nSamsung\nApple\nHuawei\nXiaomi\nOppo\nMobicel\nMotorola\nLG\nOthers\nRealme\nGoogle\nNokia\nLenovo\nOnePlus\nSony\nAsus\n\n\n\n\n0\n2019-10\n31.49\n22.09\n10.02\n7.79\n4.10\n3.15\n2.41\n2.40\n9.51\n0.54\n2.35\n0.95\n0.96\n0.70\n0.84\n0.74\n\n\n1\n2019-11\n31.36\n22.90\n10.18\n8.16\n4.42\n3.41\n2.40\n2.40\n9.10\n0.78\n0.66\n0.97\n0.97\n0.73\n0.83\n0.75\n\n\n2\n2019-12\n31.37\n24.79\n9.95\n7.73\n4.23\n3.19\n2.50\n2.54\n8.13\n0.84\n0.75\n0.90\n0.87\n0.74\n0.77\n0.70\n\n\n3\n2020-01\n31.29\n24.76\n10.61\n8.10\n4.25\n3.02\n2.42\n2.40\n7.55\n0.88\n0.69\n0.88\n0.86\n0.79\n0.80\n0.69\n\n\n4\n2020-02\n30.91\n25.89\n10.98\n7.80\n4.31\n2.89\n2.36\n2.34\n7.06\n0.89\n0.70\n0.81\n0.77\n0.78\n0.80\n0.69\n\n\n\n\n\n\n\n\n\ndf.set_index(\"Date\").diff().\\\n  dropna().boxplot(backend = \"plotly\")",
+    "text": "intro\n- 예전엔 그냥 주피터에서 R을 쓸 때 %&gt;% 같은 파이프 연산자와 &lt;- 같은 변수 정의를 위한 단축키가 잘 작동되었는데 버전 문제인가? 이제는 적용되지 않더라….\n- 이것 때문에 하루를 날리고 끝내 방법을 찾음\n- 이제 단축키를 내 마음대로 추가할 수 있음 (너무 좋앙)\n\n\n단축키 추가법\n1 settings Editor -&gt; keyboard shortcuts 클릭!\n2 그럼 상단에 Json Setting Editor라고 눈 동그랗게 뜨고 보면 보임\n\n\n\n3 이제 저기로 들어가서 아래와 같은 json 코드를 삽입하자\n\n\n\n4 후. 이것 때문에 하루 다 날린 걸 생각하면 열이 받지만, 다시금 다양한 언어를 잘 활용할 줄 아는 것의 중요성을 느꼈다.\n5 ref\n\n\ntest\n\nlibrary(tidyverse)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
     "crumbs": [
       "Posts",
-      "00. Plotly test"
+      "00. jupyter lab 단축키 추가"
     ]
   },
   {
