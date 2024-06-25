@@ -1,0 +1,3462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="GC">
+<meta name="dcterms.date" content="2024-05-05">
+
+<title>Gangcheol - 01. intro</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../posts/PBA2024/2024-05-12-02. stat &amp; ml basic.html" rel="next">
+<link href="../../posts/PBA2024/2024-04-28-Extra 00. tidydata.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Gangcheol</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/gangcheol/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/2023-08-19-00. Plotly test.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/PBA2024/2024-04-28-Extra 00. tidydata.html">PBA2024</a></li><li class="breadcrumb-item"><a href="../../posts/PBA2024/2024-05-05-01. intro.html">01. intro</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/2023-08-19-00. Plotly test.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/PBA2024/2024-04-28-Extra 00. tidydata.html">PBA2024</a></li><li class="breadcrumb-item"><a href="../../posts/PBA2024/2024-05-05-01. intro.html">01. intro</a></li></ol></nav>
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">01. intro</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>GC </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 5, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Posts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2023-08-19-00. Plotly test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00. Plotly test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/2024-03-26-00. jupyter 단축키 추가법.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00. jupyter lab 단축키 추가</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">PBA2024</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/2024-04-28-Extra 00. tidydata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extra 00. tidydata</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/2024-05-05-01. intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01. intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/2024-05-12-02. stat &amp; ml basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05. stat &amp; ML basic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/2024-05-19-03. MLE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03. MLE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/2024-05-26-04. advanced lm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. advanced LM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/PBA2024/temp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04. advanced LM</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">ST2024</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/ST2024/Intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">00. Intro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#key-elemenets-in-business-analytics" id="toc-key-elemenets-in-business-analytics" class="nav-link" data-scroll-target="#key-elemenets-in-business-analytics">key elemenets in business analytics</a></li>
+  <li><a href="#analytics-tools" id="toc-analytics-tools" class="nav-link" data-scroll-target="#analytics-tools">Analytics tools</a>
+  <ul class="collapse">
+  <li><a href="#ex1.-데이터-로드-및-저장" id="toc-ex1.-데이터-로드-및-저장" class="nav-link" data-scroll-target="#ex1.-데이터-로드-및-저장">ex1. 데이터 로드 및 저장</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">data exploration</a></li>
+  <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing">data processing</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">data Visualization</a></li>
+  </ul></li>
+  <li><a href="#statistical-modeling" id="toc-statistical-modeling" class="nav-link" data-scroll-target="#statistical-modeling">Statistical Modeling</a>
+  <ul class="collapse">
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning">Supervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#ex1.-carssimple-linear-regression" id="toc-ex1.-carssimple-linear-regression" class="nav-link" data-scroll-target="#ex1.-carssimple-linear-regression">ex1. cars(Simple Linear regression)</a></li>
+  <li><a href="#ex2.-adultlogistic" id="toc-ex2.-adultlogistic" class="nav-link" data-scroll-target="#ex2.-adultlogistic">ex2. adult(logistic)</a></li>
+  </ul></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#k-means" id="toc-k-means" class="nav-link" data-scroll-target="#k-means">k-means</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<ul>
+<li>금일 수업에서는 R, Python을 활용한 데이터 분석을 간략히 소개</li>
+</ul>
+</section>
+<section id="key-elemenets-in-business-analytics" class="level1">
+<h1>key elemenets in business analytics</h1>
+<p><code>1</code> Right questions</p>
+<p><code>2</code> Computation skills(통계분석, 선형대수학…등등)</p>
+<p><code>3</code> Visualizatioin(R, python, taebleau 등을 활용한 결과 시각화 능력)</p>
+<p><code>4</code> Communication skills</p>
+</section>
+<section id="analytics-tools" class="level1">
+<h1>Analytics tools</h1>
+<p><code>-</code> 통계에서 가장 많이 쓰는 tool</p>
+<p><code>-</code> 최근에는 머신러닝, 딥러닝 분야에서도 적용이 되고 있음(특히 의학, 생명공학)</p>
+<p><code>-</code> 개인적인 생각 : <code>통계분석</code>, <code>회귀분석</code> 쪽에서는 R이 훨씬 가독성이 좋음, <code>머신러닝</code>, <code>딥러닝</code>은 python으로 개발이 너무 잘 되어있어서 아직 장벽을 넘긴 힘든 것 같다..</p>
+<section id="ex1.-데이터-로드-및-저장" class="level3">
+<h3 class="anchored" data-anchor-id="ex1.-데이터-로드-및-저장">ex1. 데이터 로드 및 저장</h3>
+<section id="r" class="level4">
+<h4 class="anchored" data-anchor-id="r">R</h4>
+<p><code>1</code> 라이브러리 불러오기</p>
+<div id="57bd8191-4b25-4726-ba1b-aa7732fd8253" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>2</code> 데이터 로드 및 저장</p>
+<ul>
+<li><p>fread가 좀 더 빠르긴 하지만, 종종 에러가 발생하고, 그 에러를 찾는데 시간이 많이 걸려서 전 선호하지 않습니다.</p></li>
+<li><p>read.csv : R에서 기본적으로 제공하는 데이터 로드 함수</p></li>
+<li><p>read_csv : <code>readr</code>패키지에서 제공하는 데이터 로드 함수</p></li>
+<li><p>fread : <code>data.table</code> 패키지에서 제공하는 데이터 로드 함수</p></li>
+</ul>
+<div id="2c0419a6-5d70-4b68-9b62-2f5dba5d4329" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"iris.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 150 Columns: 5
+-- Column specification ------------------------------------------------------------------------------------------------
+Delimiter: ","
+chr (1): Species
+dbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div id="922c7856-f59c-4420-b341-ace57f2fddfd" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A spec_tbl_df: 12 × 5</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Sepal.Length</th>
+<th data-quarto-table-cell-role="th" scope="col">Sepal.Width</th>
+<th data-quarto-table-cell-role="th" scope="col">Petal.Length</th>
+<th data-quarto-table-cell-role="th" scope="col">Petal.Width</th>
+<th data-quarto-table-cell-role="th" scope="col">Species</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>6.5</td>
+<td>3.0</td>
+<td>5.5</td>
+<td>1.8</td>
+<td>virginica</td>
+</tr>
+<tr class="even">
+<td>5.7</td>
+<td>2.8</td>
+<td>4.5</td>
+<td>1.3</td>
+<td>versicolor</td>
+</tr>
+<tr class="odd">
+<td>6.4</td>
+<td>3.2</td>
+<td>4.5</td>
+<td>1.5</td>
+<td>versicolor</td>
+</tr>
+<tr class="even">
+<td>4.9</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.1</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td>6.8</td>
+<td>3.0</td>
+<td>5.5</td>
+<td>2.1</td>
+<td>virginica</td>
+</tr>
+<tr class="odd">
+<td>6.0</td>
+<td>2.9</td>
+<td>4.5</td>
+<td>1.5</td>
+<td>versicolor</td>
+</tr>
+<tr class="even">
+<td>5.0</td>
+<td>3.3</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td>7.2</td>
+<td>3.0</td>
+<td>5.8</td>
+<td>1.6</td>
+<td>virginica</td>
+</tr>
+<tr class="even">
+<td>5.8</td>
+<td>2.8</td>
+<td>5.1</td>
+<td>2.4</td>
+<td>virginica</td>
+</tr>
+<tr class="odd">
+<td>5.8</td>
+<td>2.7</td>
+<td>3.9</td>
+<td>1.2</td>
+<td>versicolor</td>
+</tr>
+<tr class="even">
+<td>5.0</td>
+<td>3.5</td>
+<td>1.3</td>
+<td>0.3</td>
+<td>setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>-</code> 불러온 데이터에서 <code>Species</code>가 <code>setosa</code>인 행만 추출하여 다른 <code>iris2</code>라는 파일로 저장해보자</p>
+<div id="4cec3c11-d2ef-4693-9281-6733458c2c5c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>            <span class="fu">write_csv</span>(<span class="st">"iris2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>-</code> 저장한 데이터를 다시 불러와서 확인</p>
+<div id="2414eb05-0ed2-4168-9da6-27d315d42cd1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">head</span>(<span class="fu">read_csv</span>(<span class="st">"iris2.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 50 Columns: 5
+-- Column specification ------------------------------------------------------------------------------------------------
+Delimiter: ","
+chr (1): Species
+dbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 5</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Sepal.Length</th>
+<th data-quarto-table-cell-role="th" scope="col">Sepal.Width</th>
+<th data-quarto-table-cell-role="th" scope="col">Petal.Length</th>
+<th data-quarto-table-cell-role="th" scope="col">Petal.Width</th>
+<th data-quarto-table-cell-role="th" scope="col">Species</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td>5.4</td>
+<td>3.9</td>
+<td>1.7</td>
+<td>0.4</td>
+<td>setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="python" class="level4">
+<h4 class="anchored" data-anchor-id="python">python</h4>
+<p><code>-</code> 패키지 설치 : pandas</p>
+<ul>
+<li>데이터 로드, 핸들링 등 데이터를 원하는 형태로 가공하기 위한 python 모듈</li>
+</ul>
+<div id="d72cc313-242d-4689-808a-88c40fa6fc93" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#!pip install pandas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c043987a-c37f-4b9c-b032-5221ea50aae2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>import pandas as pd</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>iris <span class="ot">=</span> <span class="fu">pd.read_csv</span>(<span class="st">"iris.csv"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fu">iris.head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Sepal.Length</th>
+<th data-quarto-table-cell-role="th">Sepal.Width</th>
+<th data-quarto-table-cell-role="th">Petal.Length</th>
+<th data-quarto-table-cell-role="th">Petal.Width</th>
+<th data-quarto-table-cell-role="th">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div id="13852428-6c76-4b01-afea-690ca06d1706" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>iris.loc[iris.Species <span class="sc">==</span> <span class="st">"setosa"</span>,<span class="sc">:</span>]<span class="fu">.to_csv</span>(<span class="st">"iris2.csv"</span>,<span class="at">index =</span> False)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="01a5273d-b177-407d-bb21-5185f32cd86f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">pd.read_csv</span>(<span class="st">"iris2.csv"</span>)<span class="fu">.head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Sepal.Length</th>
+<th data-quarto-table-cell-role="th">Sepal.Width</th>
+<th data-quarto-table-cell-role="th">Petal.Length</th>
+<th data-quarto-table-cell-role="th">Petal.Width</th>
+<th data-quarto-table-cell-role="th">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="data-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="data-exploration">data exploration</h3>
+<p><code>-</code> 일반적으로 Business analytics에서는 설명변수 <span class="math inline">\(X\)</span>와 반응변수 또는 결과변수인 <span class="math inline">\(Y\)</span> 의 관계에 대한 설명을 원한다.</p>
+<p><code>-</code> GIGO(Garbage in, Garbage out) : 쓰레기가 들어가면, 쓰레기가 나온다.</p>
+<ul>
+<li>우리가 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span>의 관계를 규명하는데 방해되는 데이터, 또는 애초에 데이터 자체에 이상치, 결측치들이 너무 많아 분석 자체를 할 수 없는 데이터….</li>
+</ul>
+<p><code>-</code> 그래서, 탐색적자료분석(EDA, Exploratory Data Analysis)은 모든 분석에 있어서 필수적으로 거쳐야한다.</p>
+<ul>
+<li>이상치, 결측치 대체, 표준화, 정규화 등등 필요에 따라 적절히 데이터를 가공할 줄 아는 능력이 필요함</li>
+</ul>
+<section id="eda-in-r" class="level4">
+<h4 class="anchored" data-anchor-id="eda-in-r">EDA in R</h4>
+<div id="d9dad60e-08e4-42eb-8a04-fb0d4f9acc49" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#install.packages("nycflights13")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5271ae48-e9a9-4f06-8138-12fb5d7baaae" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>방법 1. summary함수 : 데이터에 대한 요약값 출력</p>
+<div id="0311fa43-b126-4f33-9728-8678c41973ea" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">summary</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>      year          month             day           dep_time    sched_dep_time
+ Min.   :2013   Min.   : 1.000   Min.   : 1.00   Min.   :   1   Min.   : 106  
+ 1st Qu.:2013   1st Qu.: 4.000   1st Qu.: 8.00   1st Qu.: 907   1st Qu.: 906  
+ Median :2013   Median : 7.000   Median :16.00   Median :1401   Median :1359  
+ Mean   :2013   Mean   : 6.549   Mean   :15.71   Mean   :1349   Mean   :1344  
+ 3rd Qu.:2013   3rd Qu.:10.000   3rd Qu.:23.00   3rd Qu.:1744   3rd Qu.:1729  
+ Max.   :2013   Max.   :12.000   Max.   :31.00   Max.   :2400   Max.   :2359  
+                                                 NA's   :8255                 
+   dep_delay          arr_time    sched_arr_time   arr_delay       
+ Min.   : -43.00   Min.   :   1   Min.   :   1   Min.   : -86.000  
+ 1st Qu.:  -5.00   1st Qu.:1104   1st Qu.:1124   1st Qu.: -17.000  
+ Median :  -2.00   Median :1535   Median :1556   Median :  -5.000  
+ Mean   :  12.64   Mean   :1502   Mean   :1536   Mean   :   6.895  
+ 3rd Qu.:  11.00   3rd Qu.:1940   3rd Qu.:1945   3rd Qu.:  14.000  
+ Max.   :1301.00   Max.   :2400   Max.   :2359   Max.   :1272.000  
+ NA's   :8255      NA's   :8713                  NA's   :9430      
+   carrier              flight       tailnum             origin         
+ Length:336776      Min.   :   1   Length:336776      Length:336776     
+ Class :character   1st Qu.: 553   Class :character   Class :character  
+ Mode  :character   Median :1496   Mode  :character   Mode  :character  
+                    Mean   :1972                                        
+                    3rd Qu.:3465                                        
+                    Max.   :8500                                        
+                                                                        
+     dest              air_time        distance         hour      
+ Length:336776      Min.   : 20.0   Min.   :  17   Min.   : 1.00  
+ Class :character   1st Qu.: 82.0   1st Qu.: 502   1st Qu.: 9.00  
+ Mode  :character   Median :129.0   Median : 872   Median :13.00  
+                    Mean   :150.7   Mean   :1040   Mean   :13.18  
+                    3rd Qu.:192.0   3rd Qu.:1389   3rd Qu.:17.00  
+                    Max.   :695.0   Max.   :4983   Max.   :23.00  
+                    NA's   :9430                                  
+     minute        time_hour                  
+ Min.   : 0.00   Min.   :2013-01-01 05:00:00  
+ 1st Qu.: 8.00   1st Qu.:2013-04-04 13:00:00  
+ Median :29.00   Median :2013-07-03 10:00:00  
+ Mean   :26.23   Mean   :2013-07-03 05:22:54  
+ 3rd Qu.:44.00   3rd Qu.:2013-10-01 07:00:00  
+ Max.   :59.00   Max.   :2013-12-31 23:00:00  
+                                              </code></pre>
+</div>
+</div>
+<div id="36cf6e79-0e1d-44b5-8ab4-4ff8161b041c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ---------------------------------------------------------------- tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div id="ecf730a7-9015-4191-b3be-939a0fae462d" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">write_csv</span>(flights,<span class="st">"flights.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>방법 2. apply함수</p>
+<div id="fe80c200-c8ec-4272-a36e-149c5b16e858" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">apply</span>(flights, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">is.na</span>(x)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class="dl-inline"><dt>year</dt><dd>0</dd><dt>month</dt><dd>0</dd><dt>day</dt><dd>0</dd><dt>dep_time</dt><dd>8255</dd><dt>sched_dep_time</dt><dd>0</dd><dt>dep_delay</dt><dd>8255</dd><dt>arr_time</dt><dd>8713</dd><dt>sched_arr_time</dt><dd>0</dd><dt>arr_delay</dt><dd>9430</dd><dt>carrier</dt><dd>0</dd><dt>flight</dt><dd>0</dd><dt>tailnum</dt><dd>2512</dd><dt>origin</dt><dd>0</dd><dt>dest</dt><dd>0</dd><dt>air_time</dt><dd>9430</dd><dt>distance</dt><dd>0</dd><dt>hour</dt><dd>0</dd><dt>minute</dt><dd>0</dd><dt>time_hour</dt><dd>0</dd></dl>
+</div>
+</div>
+<p><code>-</code> 방법3. plot</p>
+<center>
+<img src="1-1.png">
+</center>
+</section>
+<section id="eda-in-python" class="level4">
+<h4 class="anchored" data-anchor-id="eda-in-python">EDA in python</h4>
+<div id="889cc717-6ea0-416f-a19b-7640e790e013" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>import pandas as pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f61853fc-cae3-44f7-a601-1b440c5e6f25" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>flights <span class="ot">=</span> <span class="fu">pd.read_csv</span>(<span class="st">"flights.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="6221a677-ba23-423d-a1c4-6b7f579ae7e4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">flights.head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">day</th>
+<th data-quarto-table-cell-role="th">dep_time</th>
+<th data-quarto-table-cell-role="th">sched_dep_time</th>
+<th data-quarto-table-cell-role="th">dep_delay</th>
+<th data-quarto-table-cell-role="th">arr_time</th>
+<th data-quarto-table-cell-role="th">sched_arr_time</th>
+<th data-quarto-table-cell-role="th">arr_delay</th>
+<th data-quarto-table-cell-role="th">carrier</th>
+<th data-quarto-table-cell-role="th">flight</th>
+<th data-quarto-table-cell-role="th">tailnum</th>
+<th data-quarto-table-cell-role="th">origin</th>
+<th data-quarto-table-cell-role="th">dest</th>
+<th data-quarto-table-cell-role="th">air_time</th>
+<th data-quarto-table-cell-role="th">distance</th>
+<th data-quarto-table-cell-role="th">hour</th>
+<th data-quarto-table-cell-role="th">minute</th>
+<th data-quarto-table-cell-role="th">time_hour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2013</td>
+<td>1</td>
+<td>1</td>
+<td>517.0</td>
+<td>515</td>
+<td>2.0</td>
+<td>830.0</td>
+<td>819</td>
+<td>11.0</td>
+<td>UA</td>
+<td>1545</td>
+<td>N14228</td>
+<td>EWR</td>
+<td>IAH</td>
+<td>227.0</td>
+<td>1400</td>
+<td>5</td>
+<td>15</td>
+<td>2013-01-01T10:00:00Z</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2013</td>
+<td>1</td>
+<td>1</td>
+<td>533.0</td>
+<td>529</td>
+<td>4.0</td>
+<td>850.0</td>
+<td>830</td>
+<td>20.0</td>
+<td>UA</td>
+<td>1714</td>
+<td>N24211</td>
+<td>LGA</td>
+<td>IAH</td>
+<td>227.0</td>
+<td>1416</td>
+<td>5</td>
+<td>29</td>
+<td>2013-01-01T10:00:00Z</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2013</td>
+<td>1</td>
+<td>1</td>
+<td>542.0</td>
+<td>540</td>
+<td>2.0</td>
+<td>923.0</td>
+<td>850</td>
+<td>33.0</td>
+<td>AA</td>
+<td>1141</td>
+<td>N619AA</td>
+<td>JFK</td>
+<td>MIA</td>
+<td>160.0</td>
+<td>1089</td>
+<td>5</td>
+<td>40</td>
+<td>2013-01-01T10:00:00Z</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2013</td>
+<td>1</td>
+<td>1</td>
+<td>544.0</td>
+<td>545</td>
+<td>-1.0</td>
+<td>1004.0</td>
+<td>1022</td>
+<td>-18.0</td>
+<td>B6</td>
+<td>725</td>
+<td>N804JB</td>
+<td>JFK</td>
+<td>BQN</td>
+<td>183.0</td>
+<td>1576</td>
+<td>5</td>
+<td>45</td>
+<td>2013-01-01T10:00:00Z</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2013</td>
+<td>1</td>
+<td>1</td>
+<td>554.0</td>
+<td>600</td>
+<td>-6.0</td>
+<td>812.0</td>
+<td>837</td>
+<td>-25.0</td>
+<td>DL</td>
+<td>461</td>
+<td>N668DN</td>
+<td>LGA</td>
+<td>ATL</td>
+<td>116.0</td>
+<td>762</td>
+<td>6</td>
+<td>0</td>
+<td>2013-01-01T11:00:00Z</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div id="b0019136-cc4a-4510-bfe6-62d74f800db3" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>flights.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>(336776, 19)</code></pre>
+</div>
+</div>
+<div id="9fa22880-a928-423b-a8dd-34e136a7988f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">flights.describe</span>().T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">year</td>
+<td>336776.0</td>
+<td>2013.000000</td>
+<td>0.000000</td>
+<td>2013.0</td>
+<td>2013.0</td>
+<td>2013.0</td>
+<td>2013.0</td>
+<td>2013.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">month</td>
+<td>336776.0</td>
+<td>6.548510</td>
+<td>3.414457</td>
+<td>1.0</td>
+<td>4.0</td>
+<td>7.0</td>
+<td>10.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">day</td>
+<td>336776.0</td>
+<td>15.710787</td>
+<td>8.768607</td>
+<td>1.0</td>
+<td>8.0</td>
+<td>16.0</td>
+<td>23.0</td>
+<td>31.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">dep_time</td>
+<td>328521.0</td>
+<td>1349.109947</td>
+<td>488.281791</td>
+<td>1.0</td>
+<td>907.0</td>
+<td>1401.0</td>
+<td>1744.0</td>
+<td>2400.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">sched_dep_time</td>
+<td>336776.0</td>
+<td>1344.254840</td>
+<td>467.335756</td>
+<td>106.0</td>
+<td>906.0</td>
+<td>1359.0</td>
+<td>1729.0</td>
+<td>2359.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">dep_delay</td>
+<td>328521.0</td>
+<td>12.639070</td>
+<td>40.210061</td>
+<td>-43.0</td>
+<td>-5.0</td>
+<td>-2.0</td>
+<td>11.0</td>
+<td>1301.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">arr_time</td>
+<td>328063.0</td>
+<td>1502.054999</td>
+<td>533.264132</td>
+<td>1.0</td>
+<td>1104.0</td>
+<td>1535.0</td>
+<td>1940.0</td>
+<td>2400.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sched_arr_time</td>
+<td>336776.0</td>
+<td>1536.380220</td>
+<td>497.457142</td>
+<td>1.0</td>
+<td>1124.0</td>
+<td>1556.0</td>
+<td>1945.0</td>
+<td>2359.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">arr_delay</td>
+<td>327346.0</td>
+<td>6.895377</td>
+<td>44.633292</td>
+<td>-86.0</td>
+<td>-17.0</td>
+<td>-5.0</td>
+<td>14.0</td>
+<td>1272.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">flight</td>
+<td>336776.0</td>
+<td>1971.923620</td>
+<td>1632.471938</td>
+<td>1.0</td>
+<td>553.0</td>
+<td>1496.0</td>
+<td>3465.0</td>
+<td>8500.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">air_time</td>
+<td>327346.0</td>
+<td>150.686460</td>
+<td>93.688305</td>
+<td>20.0</td>
+<td>82.0</td>
+<td>129.0</td>
+<td>192.0</td>
+<td>695.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">distance</td>
+<td>336776.0</td>
+<td>1039.912604</td>
+<td>733.233033</td>
+<td>17.0</td>
+<td>502.0</td>
+<td>872.0</td>
+<td>1389.0</td>
+<td>4983.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">hour</td>
+<td>336776.0</td>
+<td>13.180247</td>
+<td>4.661316</td>
+<td>1.0</td>
+<td>9.0</td>
+<td>13.0</td>
+<td>17.0</td>
+<td>23.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">minute</td>
+<td>336776.0</td>
+<td>26.230100</td>
+<td>19.300846</td>
+<td>0.0</td>
+<td>8.0</td>
+<td>29.0</td>
+<td>44.0</td>
+<td>59.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div id="f159c3f5-a15f-4dcc-9a46-d6f8d57025e6" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">flights.info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 336776 entries, 0 to 336775
+Data columns (total 19 columns):
+ #   Column          Non-Null Count   Dtype  
+---  ------          --------------   -----  
+ 0   year            336776 non-null  int64  
+ 1   month           336776 non-null  int64  
+ 2   day             336776 non-null  int64  
+ 3   dep_time        328521 non-null  float64
+ 4   sched_dep_time  336776 non-null  int64  
+ 5   dep_delay       328521 non-null  float64
+ 6   arr_time        328063 non-null  float64
+ 7   sched_arr_time  336776 non-null  int64  
+ 8   arr_delay       327346 non-null  float64
+ 9   carrier         336776 non-null  object 
+ 10  flight          336776 non-null  int64  
+ 11  tailnum         334264 non-null  object 
+ 12  origin          336776 non-null  object 
+ 13  dest            336776 non-null  object 
+ 14  air_time        327346 non-null  float64
+ 15  distance        336776 non-null  int64  
+ 16  hour            336776 non-null  int64  
+ 17  minute          336776 non-null  int64  
+ 18  time_hour       336776 non-null  object 
+dtypes: float64(5), int64(9), object(5)
+memory usage: 48.8+ MB</code></pre>
+</div>
+</div>
+<div id="3e76c33a-0337-4e27-9e42-536dc49fa4af" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">flights.isna</span>()<span class="fu">.sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>year                 0
+month                0
+day                  0
+dep_time          8255
+sched_dep_time       0
+dep_delay         8255
+arr_time          8713
+sched_arr_time       0
+arr_delay         9430
+carrier              0
+flight               0
+tailnum           2512
+origin               0
+dest                 0
+air_time          9430
+distance             0
+hour                 0
+minute               0
+time_hour            0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-processing">data processing</h3>
+<section id="r-1" class="level4">
+<h4 class="anchored" data-anchor-id="r-1">R</h4>
+<p><code>1</code> Merge : key값을 기준으로 데이터프레임을 병합하는 방법</p>
+<div id="6744eba0-747f-463d-9369-e374c2ac5723" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ---------------------------------------------------------------- tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div id="033f0931-4177-49ec-a172-1487c3f3412f" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>A <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">v1 =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>))</span>
+<span id="cb32-2"><a href="#cb32-2"></a>B <span class="ot">=</span> <span class="fu">tibble</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">v2 =</span> <span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">300</span>,<span class="dv">400</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d21a91a4-a01e-490f-b6cf-346a100e0b2b" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 4 × 3</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="25682d16-3adf-4a1f-8f07-e0e00ecb5bb4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 4 × 3</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ul>
+<li>Left join : 왼쪽 데이터 프레임의 모든 행의 결과를 포함</li>
+</ul>
+<div id="33902faa-eba4-42eb-b71a-78ac8d1d1ce8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">merge</span>(A, B, <span class="at">all.x =</span> T, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 4 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>20</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>40</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ul>
+<li>Right join : 오른쪽 데이터 프레임의 모든 행의 결과를 포함</li>
+</ul>
+<div id="d4404bbe-40f3-432f-84bd-6ae8f0bbe2c5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">merge</span>(A, B, <span class="at">all.x =</span> F, <span class="at">all.y =</span> T, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 4 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>2</td>
+<td>NA</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td>NA</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ul>
+<li>inner join : 왼쪽, 오른쪽에서 key값이 모두 존재하는 행만 병합</li>
+</ul>
+<div id="187709be-a06b-43ad-817b-d603d517dc0e" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">merge</span>(A, B, <span class="at">all.x =</span> F, <span class="at">all.y =</span> F, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 2 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ul>
+<li>outter join : 그냥 전부 병합</li>
+</ul>
+<div id="d50dd614-b31e-447b-836a-374f64e77375" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">merge</span>(A, B, <span class="at">all.x =</span> T, <span class="at">all.y =</span> T, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>20</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>NA</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>40</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>3</td>
+<td>NA</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<p><code>2</code> Conditioning (filtering)</p>
+<ul>
+<li>강의에서 언급한 전처리 방법은 전 선호 하지 않아요.</li>
+</ul>
+<div id="17e5d685-e613-4afc-a9a6-3abb0dd8361c" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>table1 <span class="ot">=</span> <span class="fu">merge</span>(A, B, <span class="at">all.x =</span> T, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="2d5977da-8188-4c5c-8067-6ba906aa279f" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 4 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>20</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>40</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="e67bbf33-ffbe-47ec-9d61-ec4ae8df7d3a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>table1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(a <span class="sc">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 2 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>20</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="ab812409-a49c-41b9-9a0a-fa8cbed25148" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>table1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(v2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 2 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>30</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="39b962c6-7449-498c-8816-fbedf1bc5db6" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>table1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(a <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(v2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 1 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">a</th>
+<th data-quarto-table-cell-role="th" scope="col">b</th>
+<th data-quarto-table-cell-role="th" scope="col">v1</th>
+<th data-quarto-table-cell-role="th" scope="col">v2</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>2</code> 컬럼 생성 &amp; 결측치 대체</p>
+<div id="c722ff91-8550-4137-abef-0df0b3e81766" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>Table1 <span class="ot">&lt;-</span>  <span class="fu">tibble</span>(<span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"Peter"</span>, <span class="st">"Amy"</span>, <span class="st">"James"</span>, <span class="st">"Joshua"</span>, <span class="st">"Sophie"</span>, <span class="st">"Tom"</span>,<span class="st">"Alex"</span>),</span>
+<span id="cb44-2"><a href="#cb44-2"></a>                  <span class="at">Class =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>),</span>
+<span id="cb44-3"><a href="#cb44-3"></a>                   <span class="at">V =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="75810d92-02f8-46b8-b899-71ae706c6023" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">write_csv</span>(Table1, <span class="st">"Table1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>-</code> class별 평균값 생성 후 붙이기</p>
+<div id="855728fb-f29b-492f-ba50-9d6a0ded2961" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>Table1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class) <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2"></a>                <span class="fu">mutate</span>(<span class="at">V_imp =</span> <span class="fu">mean</span>(V,<span class="at">na.rm =</span> T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A grouped_df: 7 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Name</th>
+<th data-quarto-table-cell-role="th" scope="col">Class</th>
+<th data-quarto-table-cell-role="th" scope="col">V</th>
+<th data-quarto-table-cell-role="th" scope="col">V_imp</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Peter</td>
+<td>1</td>
+<td>9</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td>Amy</td>
+<td>1</td>
+<td>1</td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td>James</td>
+<td>1</td>
+<td>NA</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td>Joshua</td>
+<td>2</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td>Sophie</td>
+<td>2</td>
+<td>NA</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td>Tom</td>
+<td>3</td>
+<td>4</td>
+<td>4.5</td>
+</tr>
+<tr class="odd">
+<td>Alex</td>
+<td>3</td>
+<td>5</td>
+<td>4.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>-</code> 결측치 대체</p>
+<div id="d4ce7145-a8ac-4d7b-8335-93a07d0c8690" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>Table1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class) <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="#cb47-2"></a>                <span class="fu">mutate</span>(<span class="at">V_imp =</span> <span class="fu">mean</span>(V,<span class="at">na.rm =</span> T),</span>
+<span id="cb47-3"><a href="#cb47-3"></a>                       <span class="at">V =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(V), <span class="fu">mean</span>(V,<span class="at">na.rm =</span> T), V)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A grouped_df: 7 × 4</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Name</th>
+<th data-quarto-table-cell-role="th" scope="col">Class</th>
+<th data-quarto-table-cell-role="th" scope="col">V</th>
+<th data-quarto-table-cell-role="th" scope="col">V_imp</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Peter</td>
+<td>1</td>
+<td>9</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td>Amy</td>
+<td>1</td>
+<td>1</td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td>James</td>
+<td>1</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td>Joshua</td>
+<td>2</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td>Sophie</td>
+<td>2</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td>Tom</td>
+<td>3</td>
+<td>4</td>
+<td>4.5</td>
+</tr>
+<tr class="odd">
+<td>Alex</td>
+<td>3</td>
+<td>5</td>
+<td>4.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="python-1" class="level4">
+<h4 class="anchored" data-anchor-id="python-1">python</h4>
+<div id="a0018463-6092-4295-b0ef-494df8e74c0e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>import pandas as pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7ee7b871-0eed-4866-8424-647190f73ac1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>Table1 <span class="ot">=</span> <span class="fu">pd.read_csv</span>(<span class="st">"Table1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3002221e-cdd9-47c2-bc29-d9810384c9ae" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>Table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">V</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Peter</td>
+<td>1</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Amy</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>James</td>
+<td>1</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Joshua</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Sophie</td>
+<td>2</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Tom</td>
+<td>3</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Alex</td>
+<td>3</td>
+<td>5.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p><code>1</code> 데이터 필터링</p>
+<div id="10c48198-d4d4-479f-b3d6-1a9c7f696c4f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>Table1.loc[Table1.Class <span class="sc">==</span> <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">V</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Peter</td>
+<td>1</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Amy</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>James</td>
+<td>1</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div id="a1c9ba94-85f6-4199-a538-f35bb3258eae" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">Table1.V.isna</span>() <span class="sc">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>0     True
+1     True
+2    False
+3     True
+4    False
+5     True
+6     True
+Name: V, dtype: bool</code></pre>
+</div>
+</div>
+<div id="820cc2b8-aa15-4976-bd3b-a542818c2026" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>Table1.loc[(<span class="fu">Table1.V.isna</span>() <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (Table1.Class <span class="sc">==</span> <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">V</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Peter</td>
+<td>1</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Amy</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p><code>2</code> 컬럼 생성</p>
+<div id="bd67028d-625d-4df3-9d9d-62ec9d89576f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>Table1[<span class="st">"V_imp"</span>] <span class="ot">=</span> <span class="fu">Table1.groupby</span>(<span class="st">"Class"</span>)[[<span class="st">"V"</span>]]<span class="fu">.transform</span>(<span class="st">"mean"</span>)</span>
+<span id="cb55-2"><a href="#cb55-2"></a>Table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">V</th>
+<th data-quarto-table-cell-role="th">V_imp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Peter</td>
+<td>1</td>
+<td>9.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Amy</td>
+<td>1</td>
+<td>1.0</td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>James</td>
+<td>1</td>
+<td>NaN</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Joshua</td>
+<td>2</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Sophie</td>
+<td>2</td>
+<td>NaN</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Tom</td>
+<td>3</td>
+<td>4.0</td>
+<td>4.5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Alex</td>
+<td>3</td>
+<td>5.0</td>
+<td>4.5</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p><code>3</code> 결측치 대체</p>
+<div id="ddc15c8f-4f3a-4d55-a041-5db120f09142" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>Table1[<span class="st">"V"</span>] <span class="ot">=</span> Table1[<span class="st">"V"</span>]<span class="fu">.fillna</span>(Table1.V_imp)</span>
+<span id="cb56-2"><a href="#cb56-2"></a>Table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Class</th>
+<th data-quarto-table-cell-role="th">V</th>
+<th data-quarto-table-cell-role="th">V_imp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Peter</td>
+<td>1</td>
+<td>9.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Amy</td>
+<td>1</td>
+<td>1.0</td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>James</td>
+<td>1</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Joshua</td>
+<td>2</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Sophie</td>
+<td>2</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Tom</td>
+<td>3</td>
+<td>4.0</td>
+<td>4.5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Alex</td>
+<td>3</td>
+<td>5.0</td>
+<td>4.5</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">data Visualization</h3>
+<section id="r-2" class="level4">
+<h4 class="anchored" data-anchor-id="r-2">R</h4>
+<div id="23d6a2d2-ea87-4007-8699-fc50d3e8b1ca" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ---------------------------------------------------------------- tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div id="161d9999-02a4-4b20-b784-244141487bc8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">head</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 11</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">manufacturer</th>
+<th data-quarto-table-cell-role="th" scope="col">model</th>
+<th data-quarto-table-cell-role="th" scope="col">displ</th>
+<th data-quarto-table-cell-role="th" scope="col">year</th>
+<th data-quarto-table-cell-role="th" scope="col">cyl</th>
+<th data-quarto-table-cell-role="th" scope="col">trans</th>
+<th data-quarto-table-cell-role="th" scope="col">drv</th>
+<th data-quarto-table-cell-role="th" scope="col">cty</th>
+<th data-quarto-table-cell-role="th" scope="col">hwy</th>
+<th data-quarto-table-cell-role="th" scope="col">fl</th>
+<th data-quarto-table-cell-role="th" scope="col">class</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>18</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr class="even">
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>manual(m5)</td>
+<td>f</td>
+<td>21</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr class="odd">
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>manual(m6)</td>
+<td>f</td>
+<td>20</td>
+<td>31</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr class="even">
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>auto(av)</td>
+<td>f</td>
+<td>21</td>
+<td>30</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr class="odd">
+<td>audi</td>
+<td>a4</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>16</td>
+<td>26</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr class="even">
+<td>audi</td>
+<td>a4</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>manual(m5)</td>
+<td>f</td>
+<td>18</td>
+<td>26</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="131b6fbc-5a60-436e-95c5-c992cba25fc4" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">write_csv</span>(mpg, <span class="st">"mpg.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3929be7c-3fd0-4840-a554-ec2effbf149c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height =</span> <span class="dv">7</span>, <span class="at">repr.plot.width =</span> <span class="dv">8</span>)</span>
+<span id="cb61-2"><a href="#cb61-2"></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb61-3"><a href="#cb61-3"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> cty))  <span class="sc">+</span></span>
+<span id="cb61-4"><a href="#cb61-4"></a>        <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb61-5"><a href="#cb61-5"></a>        <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">65</span>,  <span class="at">vjust =</span> <span class="fl">0.6</span>)) <span class="sc">+</span> <span class="do">## vjust는 x축 개체명 위치 +</span></span>
+<span id="cb61-6"><a href="#cb61-6"></a>        <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Box plot"</span>, </span>
+<span id="cb61-7"><a href="#cb61-7"></a>             <span class="at">subtitle =</span> <span class="st">"City Mileage vs Class"</span>,</span>
+<span id="cb61-8"><a href="#cb61-8"></a>             <span class="at">caption =</span> <span class="st">"Source : mpg"</span>,</span>
+<span id="cb61-9"><a href="#cb61-9"></a>             <span class="at">x =</span> <span class="st">"Class of Vehicle"</span>, </span>
+<span id="cb61-10"><a href="#cb61-10"></a>             <span class="at">y =</span> <span class="st">"City Mileage"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-52-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="python-2" class="level4">
+<h4 class="anchored" data-anchor-id="python-2">python</h4>
+<div id="52d409e1-cdf9-48c0-a807-d52dfea03a03" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co">#!pip install plotnine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e0d4868e-50c3-46a9-8275-ad5c670cdaaa" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>import pandas as pd</span>
+<span id="cb63-2"><a href="#cb63-2"></a>from plotnine import <span class="sc">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="31b3a320-80d5-4447-833c-5be8509bbd03" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>mpg <span class="ot">=</span> <span class="fu">pd.read_csv</span>(<span class="st">"mpg.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e37b0fbc-0739-4254-abdc-db4e83a9f80e" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>(</span>
+<span id="cb65-2"><a href="#cb65-2"></a>    <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">"manufacturer"</span>, <span class="at">y =</span> <span class="st">"cty"</span>))<span class="sc">\</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a>        <span class="sc">+</span> <span class="fu">geom_boxplot</span>()<span class="sc">\</span></span>
+<span id="cb65-4"><a href="#cb65-4"></a>        <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis_text_x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">65</span>))<span class="sc">\</span></span>
+<span id="cb65-5"><a href="#cb65-5"></a>        <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Box plot"</span>, </span>
+<span id="cb65-6"><a href="#cb65-6"></a>             <span class="at">subtitle =</span> <span class="st">"City Mileage vs Class"</span>,</span>
+<span id="cb65-7"><a href="#cb65-7"></a>             <span class="at">caption =</span> <span class="st">"Source : mpg"</span>,</span>
+<span id="cb65-8"><a href="#cb65-8"></a>             <span class="at">x =</span> <span class="st">"Class of Vehicle"</span>, </span>
+<span id="cb65-9"><a href="#cb65-9"></a>             <span class="at">y =</span> <span class="st">"City Mileage"</span>) </span>
+<span id="cb65-10"><a href="#cb65-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-56-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="statistical-modeling" class="level1">
+<h1>Statistical Modeling</h1>
+<section id="supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="supervised-learning">Supervised Learning</h2>
+<p><code>1</code> 설명변수 <span class="math inline">\(X = (x_1,x_2,\dots x_p)\)</span>로 부터 target변수인 <span class="math inline">\(Y\)</span>를 예측하는 것!</p>
+<p><span class="math display">\[y \approx \beta_1x + \beta_0\]</span></p>
+<p><code>2</code> 가장 중요한 개념!</p>
+<p><span class="math display">\[\text{총 제곱합} = \text{회귀제곱합} + \text{잔차제곱합}\]</span></p>
+<p><span class="math display">\[\sum{(y-\bar y)}^2 = \sum{(\hat y - \bar y)}^2 + \sum{( y - \hat y)}^2 \]</span></p>
+<p><span class="math display">\[\text{SST} = \text{SSR} + \text{SSE}\]</span></p>
+<p><code>3</code> 일반적으로 <span class="math inline">\(\text{SSR}\)</span> <code>회귀식으로 설명할 수 있는 변동</code>이라고 하며, 회귀분석 시 가장 관심있는 부분이다.</p>
+<p><code>4</code> 총 제곱합 <span class="math inline">\(\text{SST}\)</span>는 변하지 않는 값이므로, <code>SSR</code>이 커지면 <code>SSE</code>즉, 예측값과 실제값의 차이는 줄어들게 된다.</p>
+<p><code>5</code> 이는, 주어진 데이터로부터 우리가 적합한 회귀직선이 어떤 현상을 잘 설명하고 있다고 볼 수 있다.</p>
+<p><code>6</code> 그러면, 회귀모형 적합 후, 우리는 무엇을 검토해야 하나?</p>
+<ul>
+<li>모형 내의 개별 회귀계수에 대한 검정(<code>t통계량, p-value확인</code>)</li>
+</ul>
+<p><span class="math display">\[H_0 : \beta_1 =0 \quad\text{ vs } \quad H_1  : \text{not } H_0\]</span></p>
+<ul>
+<li>모형에 설명력인 결정계수 값 <span class="math inline">\(R^2\)</span>값 확인, 설명변수의 수가 많아질 경우 <span class="math inline">\(adj-R^2\)</span>값을 확인</li>
+</ul>
+<p><span class="math display">\[R^2 = \frac{SSR}{SST} = \frac{1-SSE}{SST}\]</span></p>
+<p><span class="math display">\[R^2_{adj} = \frac{SSR\,/\,(n-(p+1))}{SST\,/\,(n-1)} \]</span></p>
+<ul>
+<li>회귀모형이 통계적을 유의한가?(<code>F-통계량, p-value확인</code>)</li>
+</ul>
+<p><span class="math display">\[H_0 : \beta_1 = \beta_2 = \beta_3 = \dots 0 \quad\text{ vs } \quad H_1  : \text{not } H_0\]</span></p>
+<ul>
+<li>잔차 plot을 통한 모형 진단</li>
+</ul>
+<section id="ex1.-carssimple-linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="ex1.-carssimple-linear-regression">ex1. cars(Simple Linear regression)</h3>
+<div id="5f4e58de-a559-41b9-bc3c-b2d7f0b3cfcc" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ---------------------------------------------------------------- tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ---------------------------------------------------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div id="1b3f2864-e767-41f4-b474-e6eed2a8a9b1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">head</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 6 × 2</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">speed</th>
+<th data-quarto-table-cell-role="th" scope="col">dist</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">1</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">2</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">3</td>
+<td>7</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">4</td>
+<td>7</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">5</td>
+<td>8</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">6</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>-</code> 우리는 주어진 데이터로부터 아래왜 같은 현상을 예측하고 싶음</p>
+<p><span class="math display">\[\text{dist} = \beta_1\times\text{speed} + \beta_0\]</span></p>
+<p><code>-</code> 즉, 속력에 따른 거리를 예측하기 위한 <span class="math inline">\(\beta_1, \beta_0\)</span>를 추정! <span class="math inline">\(\to\)</span> <span class="math inline">\((\hat{\beta_1}, \hat{\beta_0})\)</span></p>
+<p><code>-</code> 일반적으로, 알려진 단순선형회귀분석에서의 <span class="math inline">\((\hat{\beta_1}, \hat{\beta_0})\)</span>을 구하는 방법!</p>
+<p><span class="math display">\[\hat {\beta_0} = \bar y - \hat {\beta_1}\bar x\]</span></p>
+<p><span class="math display">\[\hat {\beta_1} = \frac{S_{xy}}{S_{xx}} = \frac{\sum(x-\bar x)(y-\bar y)}{\sum(x-\bar x)^2}\]</span></p>
+<p><code>-</code> 공식 유도법(나중에 시간되면 한번 풀어보세요!)</p>
+<center>
+<img src="1-2.png" width="600">
+</center>
+<p><code>-</code> 실제로 저렇게 계산한 값과 R에서 회귀분석을 적합한 값이 일치한지 확인해보자</p>
+<div id="d4e1d42e-559a-4d19-a042-9fccebd6a420" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>x <span class="ot">=</span> cars<span class="sc">$</span>speed</span>
+<span id="cb69-2"><a href="#cb69-2"></a>y <span class="ot">=</span> cars<span class="sc">$</span>dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4c95e135-3578-4bde-9de9-54387371b644" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>bar_y <span class="ot">=</span> <span class="fu">mean</span>(y)</span>
+<span id="cb70-2"><a href="#cb70-2"></a>bar_x <span class="ot">=</span> <span class="fu">mean</span>(x)</span>
+<span id="cb70-3"><a href="#cb70-3"></a></span>
+<span id="cb70-4"><a href="#cb70-4"></a>beta_1 <span class="ot">=</span> <span class="fu">sum</span>((x<span class="sc">-</span>bar_x)<span class="sc">*</span>(y<span class="sc">-</span>bar_y))<span class="sc">/</span>(<span class="fu">sum</span>((x<span class="sc">-</span>bar_x)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb70-5"><a href="#cb70-5"></a></span>
+<span id="cb70-6"><a href="#cb70-6"></a>beta_0 <span class="ot">=</span> bar_y <span class="sc">-</span> beta_1<span class="sc">*</span>bar_x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f38ff52d-51d0-419f-b009-7e2855edbb36" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>beta_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+3.93240875912409
+</div>
+</div>
+<div id="21fbe1c4-c01b-4570-a322-19c7961553e9" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>beta_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+-17.579094890511
+</div>
+</div>
+<p><code>-</code> 즉, 이론상으로 속도에 따른 거리는 다음과 같이 설명할 수 있다</p>
+<p><span class="math display">\[\text{dist} \approx  3.9324 \times \text{spped} -17.579... \]</span></p>
+<div id="80045c4c-100c-4765-98d6-151d176942c6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>lm1 <span class="ot">=</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5fdbf58d-b88a-4aa8-a54a-0953a1de2f3f" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>lm1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Coefficients:
+(Intercept)            x  
+    -17.579        3.932  </code></pre>
+</div>
+</div>
+<p><code>-</code> 결과해석</p>
+<div id="7e0b7e57-a659-45d1-b938-0e213d14778a" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="fl">9.464</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+89.567296
+</div>
+</div>
+<div id="1273a238-714e-4b58-a771-c9be6507196b" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="fu">summary</span>(lm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.069  -9.525  -2.272   9.215  43.201 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -17.5791     6.7584  -2.601   0.0123 *  
+x             3.9324     0.4155   9.464 1.49e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 15.38 on 48 degrees of freedom
+Multiple R-squared:  0.6511,    Adjusted R-squared:  0.6438 
+F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12</code></pre>
+</div>
+</div>
+<ul>
+<li>Residuals : 실제값과 예측값의 차이</li>
+</ul>
+<p><span class="math display">\[\varepsilon_i = \hat{y_i} - y_i, \quad \varepsilon_i \sim N(0, \sigma^2)\]</span></p>
+<ul>
+<li>잔차 제곱합은 다음과 같이 표현한다.</li>
+</ul>
+<p><span class="math display">\[SSE =  \sum_{i=1}^{n} \varepsilon^2\]</span></p>
+<div id="74728d3f-94f5-4716-a6c4-9bed6231c8fe" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width =</span> <span class="dv">8</span>, <span class="at">repr.plot.height =</span> <span class="dv">5</span>)</span>
+<span id="cb79-2"><a href="#cb79-2"></a><span class="fu">plot</span>(y <span class="sc">-</span> lm1<span class="sc">$</span>fitted.values,<span class="at">main =</span> <span class="st">"잔차 plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-67-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="90e1c096-ac2b-42d4-aa2a-d5c3b3390926" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="fu">plot</span>(lm1,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-68-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>extra. subplots 그리는법</li>
+</ul>
+<div id="3f45d589-643b-4d35-aef0-993ae3dc963a" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width =</span> <span class="dv">12</span>, <span class="at">repr.plot.height =</span> <span class="dv">4</span>)</span>
+<span id="cb81-2"><a href="#cb81-2"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb81-3"><a href="#cb81-3"></a><span class="fu">plot</span>(y <span class="sc">-</span> lm1<span class="sc">$</span>fitted.values,<span class="at">main =</span> <span class="st">"잔차 plot"</span>)</span>
+<span id="cb81-4"><a href="#cb81-4"></a><span class="fu">plot</span>(lm1,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-69-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>p-value? 검정통계량의 근거하여 적합한 모형의 유의미성을 검증하는 척도</li>
+</ul>
+<div id="83468767-9fcb-48bd-a6cc-1c41d7ceaeff" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">summary</span>(lm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.069  -9.525  -2.272   9.215  43.201 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -17.5791     6.7584  -2.601   0.0123 *  
+x             3.9324     0.4155   9.464 1.49e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 15.38 on 48 degrees of freedom
+Multiple R-squared:  0.6511,    Adjusted R-squared:  0.6438 
+F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12</code></pre>
+</div>
+</div>
+<section id="결과해석" class="level4">
+<h4 class="anchored" data-anchor-id="결과해석">결과해석</h4>
+<p><code>1</code> 추정된 회귀계수 <span class="math inline">\(\hat{\beta_1},\hat{\beta_0}\)</span>는 t-검정통계량의 근거한 p-value값을 보았을 때 0.05보다 작아 통계적으로 유의하다.</p>
+<p><code>2</code> 결정계수값을 살펴본 결과 적합한 모형은 65% 정도의 설명력을 가지고 있다.</p>
+<p><code>3</code> 또한, <code>F-통계량</code>의 근거한 <code>p-value</code>값을 보아도 생성된 모델은 통계적으로 유의하다.</p>
+<p><code>4</code> 잔차 plot을 그려본 결과 오차항의 정규성과 독립성 가정에 위배되지 않았음</p>
+<div id="7581127e-f259-45a3-9ef7-a5ccdd06433f" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="fu">plot</span>(lm1,<span class="dv">1</span>);<span class="fu">plot</span>(lm1,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-71-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>5</code> 따라서, 우리가 적합한 모델은 속도에 따른 자동차의 주행거리를 설명하기에 적합한 모형이라고 할 수 있다.</p>
+<hr>
+</section>
+</section>
+<section id="ex2.-adultlogistic" class="level3">
+<h3 class="anchored" data-anchor-id="ex2.-adultlogistic">ex2. adult(logistic)</h3>
+<p><code>-</code> 로지스틱 모형은 target 변수인 <span class="math inline">\(y\)</span>에 대한 직접적 모형화가 아닌 <span class="math inline">\(y\)</span>가 특정 범주에 포함될 확률을 모형화한다.</p>
+<p><code>-</code> 임계치(threshole)를 정하고 어떤 범주에 포함될 확률이 임계치보다 높으면 0 or 1로 예측하는 분류 모형이다. (이진분류에서!)</p>
+<section id="모형-유도" class="level4">
+<h4 class="anchored" data-anchor-id="모형-유도">모형 유도</h4>
+<p>step1 : 0과 1사이의 값으로 예측해 주는 모형 설계</p>
+<p><span class="math display">\[P(X) = \frac{exp(\beta_0+\beta_1X)}{1+exp(\beta_0+\beta_1X)}, \quad \in (0,1)\]</span></p>
+<p>step2. odds, 배팅을 하는 분야에서 확률 대신 많이 쓰이는 측도</p>
+<p><span class="math display">\[\text{odds} = \frac{P(X)}{1-P(x)}= {exp(\beta_0 + \beta_1X)}, \quad \in(0, \infty)\]</span></p>
+<p>step3. logit, 배팅을하는 분야에서 확률 대신 많이 쓰이는 측도</p>
+<p><span class="math display">\[\text{logit} = \log{\frac{P(X)}{1-P(x)}}  = \beta_0 + \beta_1 x, \quad \in (-\infty, \infty)\]</span></p>
+<p>즉, 우리는 로짓에서 보이는 <span class="math inline">\(\beta_0, \beta_1\)</span>을 추정하는 것임</p>
+</section>
+<section id="실습-주식-데이터" class="level4">
+<h4 class="anchored" data-anchor-id="실습-주식-데이터">실습, 주식 데이터</h4>
+<div id="9ed39b3c-90e5-4241-bfe7-63c93d2770ec" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="co">#install.packages("ISLR")</span></span>
+<span id="cb85-2"><a href="#cb85-2"></a><span class="fu">library</span>(ISLR)</span>
+<span id="cb85-3"><a href="#cb85-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb85-4"><a href="#cb85-4"></a><span class="co">#names(Smarket)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="56cf3c36-dc2e-4c67-8754-c04ca319afaf" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="fu">head</span>(Smarket)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 6 × 9</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">Year</th>
+<th data-quarto-table-cell-role="th" scope="col">Lag1</th>
+<th data-quarto-table-cell-role="th" scope="col">Lag2</th>
+<th data-quarto-table-cell-role="th" scope="col">Lag3</th>
+<th data-quarto-table-cell-role="th" scope="col">Lag4</th>
+<th data-quarto-table-cell-role="th" scope="col">Lag5</th>
+<th data-quarto-table-cell-role="th" scope="col">Volume</th>
+<th data-quarto-table-cell-role="th" scope="col">Today</th>
+<th data-quarto-table-cell-role="th" scope="col">Direction</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">1</td>
+<td>2001</td>
+<td>0.381</td>
+<td>-0.192</td>
+<td>-2.624</td>
+<td>-1.055</td>
+<td>5.010</td>
+<td>1.1913</td>
+<td>0.959</td>
+<td>Up</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">2</td>
+<td>2001</td>
+<td>0.959</td>
+<td>0.381</td>
+<td>-0.192</td>
+<td>-2.624</td>
+<td>-1.055</td>
+<td>1.2965</td>
+<td>1.032</td>
+<td>Up</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">3</td>
+<td>2001</td>
+<td>1.032</td>
+<td>0.959</td>
+<td>0.381</td>
+<td>-0.192</td>
+<td>-2.624</td>
+<td>1.4112</td>
+<td>-0.623</td>
+<td>Down</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">4</td>
+<td>2001</td>
+<td>-0.623</td>
+<td>1.032</td>
+<td>0.959</td>
+<td>0.381</td>
+<td>-0.192</td>
+<td>1.2760</td>
+<td>0.614</td>
+<td>Up</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">5</td>
+<td>2001</td>
+<td>0.614</td>
+<td>-0.623</td>
+<td>1.032</td>
+<td>0.959</td>
+<td>0.381</td>
+<td>1.2057</td>
+<td>0.213</td>
+<td>Up</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">6</td>
+<td>2001</td>
+<td>0.213</td>
+<td>0.614</td>
+<td>-0.623</td>
+<td>1.032</td>
+<td>0.959</td>
+<td>1.3491</td>
+<td>1.392</td>
+<td>Up</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>-</code>데이터 설명</p>
+<ul>
+<li><p>lag<span class="math inline">\(_i\)</span> : i번째 전 날의 smarket 주식 종가</p></li>
+<li><p>today : 오늘 주식 종가</p></li>
+<li><p>Direction : 주식이 올라갔는지, 떨어졌는지</p></li>
+<li><p>Volume : 거래량</p></li>
+</ul>
+<p><code>1</code> 데이터셋 분할 7:3으로 분할</p>
+<div id="05a3024e-2228-4f79-9dd5-8d4354570115" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>train <span class="ot">&lt;-</span> Smarket <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="fl">0.7</span>)</span>
+<span id="cb87-2"><a href="#cb87-2"></a>test <span class="ot">&lt;-</span> Smarket <span class="sc">%&gt;%</span> <span class="fu">setdiff</span>(train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="87df5958-98da-4ae9-bf62-787c0e57a83f" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="fu">glimpse</span>(test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 375
+Columns: 9
+$ Year      &lt;dbl&gt; 2001, 2001, 2001, 2001, 2001, 2001, 2001, 2001, 2001, 2001, ~
+$ Lag1      &lt;dbl&gt; 0.381, 0.959, 1.392, -0.403, 1.303, -0.189, -0.562, 0.359, -~
+$ Lag2      &lt;dbl&gt; -0.192, 0.381, 0.213, 1.392, 0.027, -0.498, 0.701, -1.747, -~
+$ Lag3      &lt;dbl&gt; -2.624, -0.192, 0.614, 0.213, -0.403, 0.287, 0.680, 0.546, 0~
+$ Lag4      &lt;dbl&gt; -1.055, -2.624, -0.623, 0.614, 1.392, 1.303, -0.189, -0.562,~
+$ Lag5      &lt;dbl&gt; 5.010, -1.055, 1.032, -0.623, 0.213, 0.027, -0.498, 0.701, 0~
+$ Volume    &lt;dbl&gt; 1.19130, 1.29650, 1.44500, 1.40780, 1.23260, 1.09800, 1.2953~
+$ Today     &lt;dbl&gt; 0.959, 1.032, -0.403, 0.027, 0.287, 0.680, 0.546, -0.151, -0~
+$ Direction &lt;fct&gt; Up, Up, Down, Up, Up, Up, Up, Down, Down, Down, Down, Down, ~</code></pre>
+</div>
+</div>
+<p><code>2</code> 모형 적합</p>
+<div id="7534ed95-0ba2-4f64-a861-d4e658714f04" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>logit_fit <span class="ot">&lt;-</span><span class="fu">glm</span>(Direction <span class="sc">~</span>., <span class="at">data =</span> train, </span>
+<span id="cb90-2"><a href="#cb90-2"></a>                <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"probit"</span>)) <span class="do">## 이진분류이므로 "binomial"이라고 기입</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning message:
+"glm.fit: algorithm did not converge"
+Warning message:
+"glm.fit: fitted probabilities numerically 0 or 1 occurred"</code></pre>
+</div>
+</div>
+<p><code>3</code> 예측</p>
+<div id="c424ea58-385f-479c-9955-638215dcd83b" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>필요한 패키지를 로딩중입니다: lattice
+
+
+다음의 패키지를 부착합니다: 'caret'
+
+
+The following object is masked from 'package:purrr':
+
+    lift
+
+</code></pre>
+</div>
+</div>
+<div id="3420431d-21ce-459e-ab38-7263aa7245e4" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a>pred <span class="ot">&lt;-</span>  <span class="fu">ifelse</span>(<span class="fu">predict</span>(logit_fit,test, <span class="at">type =</span> <span class="st">"response"</span>) <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="st">"Up"</span>, <span class="st">"Down"</span>) <span class="sc">%&gt;%</span> <span class="fu">as_factor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3402a5f1-bc6c-4b1b-b5f8-affc9b017a68" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a><span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(pred), <span class="fu">factor</span>(test<span class="sc">$</span>Direction))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning message in confusionMatrix.default(factor(pred), factor(test$Direction)):
+"Levels are not in the same order for reference and data. Refactoring data to match."</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction Down  Up
+      Down  185   0
+      Up      1 189
+                                          
+               Accuracy : 0.9973          
+                 95% CI : (0.9852, 0.9999)
+    No Information Rate : 0.504           
+    P-Value [Acc &gt; NIR] : &lt;2e-16          
+                                          
+                  Kappa : 0.9947          
+                                          
+ Mcnemar's Test P-Value : 1               
+                                          
+            Sensitivity : 0.9946          
+            Specificity : 1.0000          
+         Pos Pred Value : 1.0000          
+         Neg Pred Value : 0.9947          
+             Prevalence : 0.4960          
+         Detection Rate : 0.4933          
+   Detection Prevalence : 0.4933          
+      Balanced Accuracy : 0.9973          
+                                          
+       'Positive' Class : Down            
+                                          </code></pre>
+</div>
+</div>
+</section>
+<section id="정밀도-재현율-정확도" class="level4">
+<h4 class="anchored" data-anchor-id="정밀도-재현율-정확도">정밀도, 재현율, 정확도</h4>
+<p><code>-</code> 위 네 가지는, 분류 모델의 성능 평가시 사용되는 척도이며 처음 접하는 사람들이 많이 헷갈려한다.</p>
+<p><code>-</code> 위 예제는 4가지 지표에서 뛰어난 성능을 보이나 그렇지 않은 경우가 존재한다면?</p>
+<div id="a41ab927-91f5-487c-accf-edcd1ab8f318" class="cell" data-scrolled="true" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="fu">as.table</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">9644</span>,<span class="dv">23</span>,<span class="dv">252</span>,<span class="dv">81</span>), <span class="at">nrow =</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>     A    B
+A 9644  252
+B   23   81</code></pre>
+</div>
+</div>
+<p><code>-</code> 정확도(accuracy)를 구해보자</p>
+<div id="a9f09c92-84fb-40aa-aef3-9894690cbb60" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>(<span class="dv">9644</span><span class="sc">+</span><span class="dv">81</span>)<span class="sc">/</span>(<span class="dv">9644</span><span class="sc">+</span><span class="dv">23</span><span class="sc">+</span><span class="dv">252</span><span class="sc">+</span><span class="dv">81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+0.9725
+</div>
+</div>
+<p><code>-</code> 오, 괜찮은 것 같다?</p>
+<ul>
+<li>그러나 여기에는 함정이 존재한다.(재현율)</li>
+</ul>
+<div id="606d41b0-37c5-4dc6-87fa-1b2446cc847c" class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>(<span class="dv">81</span>)<span class="sc">/</span>(<span class="dv">252</span><span class="sc">+</span><span class="dv">81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+0.243243243243243
+</div>
+</div>
+<ul>
+<li>어라? 전체 B중에 예측모델이 B라고 예측한 것은 0.24..밖에 안되네?</li>
+<li>기업의 입장에서 보았을 때, 정확도보단 재현율이 더 중요한 지표임</li>
+<li>즉, 실제 참인 것 중에 예측모델이 참이라고 예측한 비율이 낮은 경우가 발생할 수 있음</li>
+</ul>
+<p><code>-</code> 정밀도 : 모델이 참이라고 예측한 것 중, 실제 참인 것의 비율</p>
+<div id="26ac1bd8-0296-4fb9-81ac-e0241b81cb62" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a><span class="dv">81</span><span class="sc">/</span>(<span class="dv">23</span><span class="sc">+</span><span class="dv">81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+0.778846153846154
+</div>
+</div>
+<p><code>-</code> 즉, 우리가 분류모델을 설계하고, 에측 성능을 판단할 때 단순히 정확도만 보고 판단하면 안 된다는 것!</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="unsupervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h2>
+<p><code>-</code> 설명변수 <span class="math inline">\(X=(x_1, x_2, \dots)\)</span>로 부터 비슷한 성질을 갖는 녀석들끼리 한 집단으로 묶는 것</p>
+<p><code>-</code> 대표적인 알고리즘 : kmeans, dbscan, hdbscan 등등</p>
+<section id="k-means" class="level3">
+<h3 class="anchored" data-anchor-id="k-means">k-means</h3>
+<p><code>1</code>주어진 데이터를 k개의 클러스터로 묶는 알고리즘, 각 클러스터와 거리 차이의 분산을 최소화 하는 방식으로 동작</p>
+<p><code>2</code> 허나 군집의 수, 가중치와 거리 정의가 어려우며, 사전에 주어진 목적이 없으므로 결과 해석이 어려움.</p>
+<p><code>3</code> 또한 잡음이나 이상값의 영향을 받으며 초기 군집 수를 결정해야 한다는 단점이 있다.</p>
+<div id="f13142fb-800f-4124-9118-5ab792aed69b" class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1"></a><span class="co">#install.packages("patchwork")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="bd70a353-9695-4a2b-aeba-bacda461694a" class="cell" data-execution_count="58">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a><span class="fu">options</span>(<span class="at">repr.plot.res =</span> <span class="dv">200</span>)</span>
+<span id="cb104-2"><a href="#cb104-2"></a></span>
+<span id="cb104-3"><a href="#cb104-3"></a>p1 <span class="ot">=</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb104-4"><a href="#cb104-4"></a>       <span class="fu">aes</span>(Petal.Length, Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb104-5"><a href="#cb104-5"></a>            <span class="fu">geom_point</span>()</span>
+<span id="cb104-6"><a href="#cb104-6"></a></span>
+<span id="cb104-7"><a href="#cb104-7"></a>p2 <span class="ot">=</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb104-8"><a href="#cb104-8"></a>       <span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span> </span>
+<span id="cb104-9"><a href="#cb104-9"></a>            <span class="fu">geom_point</span>()</span>
+<span id="cb104-10"><a href="#cb104-10"></a></span>
+<span id="cb104-11"><a href="#cb104-11"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb104-12"><a href="#cb104-12"></a></span>
+<span id="cb104-13"><a href="#cb104-13"></a>p1 <span class="sc">+</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-85-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>-</code> 만약, 우리가 생성한 군집이 잘 생성되었다면? 완쪽과 같은 분포로 군집이 형성되어야 한다.</p>
+<div id="2fdd71cc-fc8c-4b2e-9a16-6583cd0a9e89" class="cell" data-execution_count="60">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a>ic <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(iris[,<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">centers =</span> <span class="dv">3</span>)</span>
+<span id="cb105-2"><a href="#cb105-2"></a></span>
+<span id="cb105-3"><a href="#cb105-3"></a>iris<span class="sc">$</span>cluster <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ic<span class="sc">$</span>cluster)</span>
+<span id="cb105-4"><a href="#cb105-4"></a></span>
+<span id="cb105-5"><a href="#cb105-5"></a>p1 <span class="ot">=</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb105-6"><a href="#cb105-6"></a>       <span class="fu">aes</span>(Petal.Length, Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb105-7"><a href="#cb105-7"></a>            <span class="fu">geom_point</span>()</span>
+<span id="cb105-8"><a href="#cb105-8"></a></span>
+<span id="cb105-9"><a href="#cb105-9"></a>p2 <span class="ot">=</span> <span class="fu">ggplot</span>(iris, </span>
+<span id="cb105-10"><a href="#cb105-10"></a>       <span class="fu">aes</span>(Petal.Length, Petal.Width, <span class="at">color =</span> cluster)) <span class="sc">+</span> </span>
+<span id="cb105-11"><a href="#cb105-11"></a>            <span class="fu">geom_point</span>()</span>
+<span id="cb105-12"><a href="#cb105-12"></a></span>
+<span id="cb105-13"><a href="#cb105-13"></a>p1 <span class="sc">+</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2024-05-05-01. intro_files/figure-html/cell-86-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../posts/PBA2024/2024-04-28-Extra 00. tidydata.html" class="pagination-link" aria-label="Extra 00. tidydata">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Extra 00. tidydata</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../posts/PBA2024/2024-05-12-02. stat &amp; ml basic.html" class="pagination-link" aria-label="05. stat &amp; ML basic">
+        <span class="nav-page-text">05. stat &amp; ML basic</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

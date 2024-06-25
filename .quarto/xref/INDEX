@@ -49,5 +49,23 @@
   },
   "posts/ST2024/Intro.ipynb": {
     "Intro.html": "dfe5d8e9"
+  },
+  "posts/PBA2024/2024-04-28-Extra 00. tidydata.ipynb": {
+    "2024-04-28-Extra 00. tidydata.html": "eb22c272"
+  },
+  "posts/PBA2024/2024-05-05-01. intro.ipynb": {
+    "2024-05-05-01. intro.html": "1d75ac57"
+  },
+  "posts/PBA2024/2024-05-12-02. stat & ml basic.ipynb": {
+    "2024-05-12-02. stat & ml basic.html": "bd418822"
+  },
+  "posts/PBA2024/2024-05-19-03. MLE.ipynb": {
+    "2024-05-19-03. MLE.html": "ef2479d6"
+  },
+  "posts/PBA2024/2024-05-26-04. advanced lm.ipynb": {
+    "2024-05-26-04. advanced lm.html": "fc4c17eb"
+  },
+  "posts/PBA2024/temp.ipynb": {
+    "temp.html": "d088e918"
   }
 }
